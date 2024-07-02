@@ -7,7 +7,7 @@
 
 | iOS Minimum Target | Xcode Version | Swift Version |
 |--------------------|---------------|---------------|
-| iOS 15.0           | Xcode 15.4    | Swift 5.1     |
+| iOS 15.0           | Xcode 15.4    | Swift 5.10     |
 
 
 # Framework / Architecture
