@@ -1,0 +1,16 @@
+
+opt_in_rules:
+  - force_unwrapping
+  - force_cast
+  - force_try
+  - empty_count
+  - empty_string
+  
+force_unwrapping:
+  severity: error
+
+force_cast:
+  severity: error
+
+force_try:
+  severity: error

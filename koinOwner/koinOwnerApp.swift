@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct koinOwnerApp: App {
+struct KoinOwnerApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
