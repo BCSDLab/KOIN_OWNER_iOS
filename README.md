@@ -2,6 +2,14 @@
 > 수행 기간: 24.06.30 ~
 
 
+
+# Project Information
+
+| iOS Minimum Target | Xcode Version | Swift Version |
+|--------------------|---------------|---------------|
+| iOS 15.0           | Xcode 15.4    | Swift 5.1     |
+
+
 # Framework / Architecture
 
 - SwiftUI
