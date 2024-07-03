@@ -111,7 +111,7 @@ struct MainNavigationBar: View {
             Button {
                 () //TODO: 설명 View Navigation
             } label: {
-                Image(.icMenu)
+                Image(.icnMenu)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 24, height: 24)
