@@ -14,3 +14,7 @@ force_cast:
 
 force_try:
   severity: error
+
+disabled_rules:
+- leading_whitespace
+- trailing_whitespace

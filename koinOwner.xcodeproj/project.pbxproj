@@ -7,11 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B303B5F2C34F20C00E1ECEA /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 1B303B5E2C34F20C00E1ECEA /* Nuke */; };
+		1B303B612C34F20C00E1ECEA /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = 1B303B602C34F20C00E1ECEA /* NukeUI */; };
+		1B303B642C3503BC00E1ECEA /* ScalingHeaderScrollView in Frameworks */ = {isa = PBXBuildFile; productRef = 1B303B632C3503BC00E1ECEA /* ScalingHeaderScrollView */; };
+		1B303B662C35107300E1ECEA /* UIScreen+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B303B652C35107300E1ECEA /* UIScreen+Size.swift */; };
 		1B5D7E4B2C329AF200850B30 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1B5D7E482C329AF200850B30 /* Pretendard-Regular.otf */; };
 		1B5D7E4C2C329AF200850B30 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1B5D7E492C329AF200850B30 /* Pretendard-Bold.otf */; };
 		1B5D7E4D2C329AF200850B30 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1B5D7E4A2C329AF200850B30 /* Pretendard-Medium.otf */; };
 		1B5D7E502C329B2D00850B30 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B5D7E4F2C329B2D00850B30 /* Colors.xcassets */; };
 		1B5D7E542C32A25A00850B30 /* Font+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5D7E532C32A25A00850B30 /* Font+Custom.swift */; };
+		1B5D7E7D2C34DF3000850B30 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5D7E7C2C34DF3000850B30 /* MainView.swift */; };
+		1B5D7E802C34E0C000850B30 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5D7E7F2C34E0C000850B30 /* CustomNavigationBar.swift */; };
 		D229EBC42C33A7C7004D54F9 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = D229EBC32C33A7C7004D54F9 /* .swiftlint.yml */; };
 		D2EE257B2C30A460000B8015 /* koinOwnerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EE257A2C30A460000B8015 /* koinOwnerApp.swift */; };
 		D2EE257D2C30A460000B8015 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EE257C2C30A460000B8015 /* ContentView.swift */; };
@@ -21,12 +27,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B303B652C35107300E1ECEA /* UIScreen+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Size.swift"; sourceTree = "<group>"; };
 		1B5D7E482C329AF200850B30 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		1B5D7E492C329AF200850B30 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		1B5D7E4A2C329AF200850B30 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		1B5D7E4E2C329B0100850B30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1B5D7E4F2C329B2D00850B30 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		1B5D7E532C32A25A00850B30 /* Font+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Custom.swift"; sourceTree = "<group>"; };
+		1B5D7E7C2C34DF3000850B30 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		1B5D7E7F2C34E0C000850B30 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		D229EBC32C33A7C7004D54F9 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		D2EE25772C30A460000B8015 /* koinOwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = koinOwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2EE257A2C30A460000B8015 /* koinOwnerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = koinOwnerApp.swift; sourceTree = "<group>"; };
@@ -41,6 +50,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B303B5F2C34F20C00E1ECEA /* Nuke in Frameworks */,
+				1B303B612C34F20C00E1ECEA /* NukeUI in Frameworks */,
+				1B303B642C3503BC00E1ECEA /* ScalingHeaderScrollView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,17 +82,35 @@
 		1B5D7E512C32A1EF00850B30 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				1B5D7E522C32A24C00850B30 /* Extension */,
+				1B5D7E7E2C34E0AC00850B30 /* Components */,
+				1B5D7E522C32A24C00850B30 /* Extensions */,
 			);
 			path = Common;
 			sourceTree = "<group>";
 		};
-		1B5D7E522C32A24C00850B30 /* Extension */ = {
+		1B5D7E522C32A24C00850B30 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				1B5D7E532C32A25A00850B30 /* Font+Custom.swift */,
+				1B303B652C35107300E1ECEA /* UIScreen+Size.swift */,
 			);
-			path = Extension;
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1B5D7E7B2C34DED600850B30 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				1B5D7E7C2C34DF3000850B30 /* MainView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		1B5D7E7E2C34E0AC00850B30 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				1B5D7E7F2C34E0C000850B30 /* CustomNavigationBar.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		D2EE256E2C30A460000B8015 = {
@@ -133,6 +163,7 @@
 		D2EE258A2C325902000B8015 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				1B5D7E7B2C34DED600850B30 /* Main */,
 				D2EE258D2C32592F000B8015 /* .gitkeep */,
 			);
 			path = Modules;
@@ -155,6 +186,11 @@
 			dependencies = (
 			);
 			name = koinOwner;
+			packageProductDependencies = (
+				1B303B5E2C34F20C00E1ECEA /* Nuke */,
+				1B303B602C34F20C00E1ECEA /* NukeUI */,
+				1B303B632C3503BC00E1ECEA /* ScalingHeaderScrollView */,
+			);
 			productName = koinOwner;
 			productReference = D2EE25772C30A460000B8015 /* koinOwner.app */;
 			productType = "com.apple.product-type.application";
@@ -183,6 +219,10 @@
 				Base,
 			);
 			mainGroup = D2EE256E2C30A460000B8015;
+			packageReferences = (
+				1B303B5D2C34F20C00E1ECEA /* XCRemoteSwiftPackageReference "Nuke" */,
+				1B303B622C3503BC00E1ECEA /* XCRemoteSwiftPackageReference "ScalingHeaderScrollView" */,
+			);
 			productRefGroup = D2EE25782C30A460000B8015 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -237,7 +277,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B5D7E802C34E0C000850B30 /* CustomNavigationBar.swift in Sources */,
 				D2EE257D2C30A460000B8015 /* ContentView.swift in Sources */,
+				1B303B662C35107300E1ECEA /* UIScreen+Size.swift in Sources */,
+				1B5D7E7D2C34DF3000850B30 /* MainView.swift in Sources */,
 				1B5D7E542C32A25A00850B30 /* Font+Custom.swift in Sources */,
 				D2EE257B2C30A460000B8015 /* koinOwnerApp.swift in Sources */,
 			);
@@ -449,6 +492,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1B303B5D2C34F20C00E1ECEA /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.7.3;
+			};
+		};
+		1B303B622C3503BC00E1ECEA /* XCRemoteSwiftPackageReference "ScalingHeaderScrollView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/ScalingHeaderScrollView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1B303B5E2C34F20C00E1ECEA /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1B303B5D2C34F20C00E1ECEA /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = Nuke;
+		};
+		1B303B602C34F20C00E1ECEA /* NukeUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1B303B5D2C34F20C00E1ECEA /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = NukeUI;
+		};
+		1B303B632C3503BC00E1ECEA /* ScalingHeaderScrollView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1B303B622C3503BC00E1ECEA /* XCRemoteSwiftPackageReference "ScalingHeaderScrollView" */;
+			productName = ScalingHeaderScrollView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D2EE256F2C30A460000B8015 /* Project object */;
 }
