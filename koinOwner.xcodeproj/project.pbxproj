@@ -11,6 +11,8 @@
 		1B303B612C34F20C00E1ECEA /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = 1B303B602C34F20C00E1ECEA /* NukeUI */; };
 		1B303B642C3503BC00E1ECEA /* ScalingHeaderScrollView in Frameworks */ = {isa = PBXBuildFile; productRef = 1B303B632C3503BC00E1ECEA /* ScalingHeaderScrollView */; };
 		1B303B662C35107300E1ECEA /* UIScreen+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B303B652C35107300E1ECEA /* UIScreen+Size.swift */; };
+		1B303B692C365F9F00E1ECEA /* MainView+MenuTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B303B682C365F9F00E1ECEA /* MainView+MenuTab.swift */; };
+		1B303B6B2C3667DC00E1ECEA /* MainView+EventTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B303B6A2C3667DC00E1ECEA /* MainView+EventTab.swift */; };
 		1B5D7E4B2C329AF200850B30 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1B5D7E482C329AF200850B30 /* Pretendard-Regular.otf */; };
 		1B5D7E4C2C329AF200850B30 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1B5D7E492C329AF200850B30 /* Pretendard-Bold.otf */; };
 		1B5D7E4D2C329AF200850B30 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1B5D7E4A2C329AF200850B30 /* Pretendard-Medium.otf */; };
@@ -28,6 +30,8 @@
 
 /* Begin PBXFileReference section */
 		1B303B652C35107300E1ECEA /* UIScreen+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Size.swift"; sourceTree = "<group>"; };
+		1B303B682C365F9F00E1ECEA /* MainView+MenuTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainView+MenuTab.swift"; sourceTree = "<group>"; };
+		1B303B6A2C3667DC00E1ECEA /* MainView+EventTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainView+EventTab.swift"; sourceTree = "<group>"; };
 		1B5D7E482C329AF200850B30 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		1B5D7E492C329AF200850B30 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		1B5D7E4A2C329AF200850B30 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
@@ -59,6 +63,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B303B672C365F8400E1ECEA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1B303B682C365F9F00E1ECEA /* MainView+MenuTab.swift */,
+				1B303B6A2C3667DC00E1ECEA /* MainView+EventTab.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		1B5D7E462C329A7200850B30 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +113,7 @@
 		1B5D7E7B2C34DED600850B30 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				1B303B672C365F8400E1ECEA /* Views */,
 				1B5D7E7C2C34DF3000850B30 /* MainView.swift */,
 			);
 			path = Main;
@@ -277,11 +291,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B303B692C365F9F00E1ECEA /* MainView+MenuTab.swift in Sources */,
 				1B5D7E802C34E0C000850B30 /* CustomNavigationBar.swift in Sources */,
 				D2EE257D2C30A460000B8015 /* ContentView.swift in Sources */,
 				1B303B662C35107300E1ECEA /* UIScreen+Size.swift in Sources */,
 				1B5D7E7D2C34DF3000850B30 /* MainView.swift in Sources */,
 				1B5D7E542C32A25A00850B30 /* Font+Custom.swift in Sources */,
+				1B303B6B2C3667DC00E1ECEA /* MainView+EventTab.swift in Sources */,
 				D2EE257B2C30A460000B8015 /* koinOwnerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,7 +357,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -398,7 +414,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;

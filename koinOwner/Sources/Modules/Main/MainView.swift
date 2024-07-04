@@ -12,6 +12,10 @@ import ScalingHeaderScrollView
 struct MainView: View {
     @State var currentTab: Int = 0
     @State var currentMenu: Int = -1
+    @State var isEditing: Bool = false
+    @State var currentEvent: Int = -1
+    
+    @State var selectedEvent: [Int] = []
     
     @State var progress: CGFloat = 0
     @State var currentOffset: CGFloat = 0
@@ -32,7 +36,7 @@ struct MainView: View {
                         .padding(.bottom, 44)
                     
                     HStack(spacing: 0) {
-                        Image(systemName: "info.circle")
+                        Image(.icnInfo)
                             .resizable()
                             .scaledToFit()
                             .frame(width: 16, height: 16)
@@ -61,7 +65,7 @@ struct MainView: View {
                             case 0:
                                 menuTab()
                             case 1:
-                                EmptyView()
+                                eventTab
                             default:
                                 EmptyView()
                             }
@@ -76,6 +80,19 @@ struct MainView: View {
             }
         }
         .mainNavigationBar()
+        .onChange(of: currentTab) { _ in
+            withAnimation {
+                currentMenu = -1
+                currentEvent = -1
+                isEditing = false
+            }
+        }
+        .onChange(of: isEditing) { _ in
+            withAnimation {
+                currentEvent = -1
+                selectedEvent.removeAll()
+            }
+        }
     }
 }
 
@@ -91,7 +108,7 @@ extension MainView {
                         .frame(height: 255)
                         .clipped()
                 } else {
-                    Rectangle() //TODO: placeholder 필요
+                    Rectangle() // TODO: placeholder 필요
                         .frame(width: .infinity, height: 255)
                         .foregroundStyle(Color.neutral100)
                 }
@@ -104,7 +121,7 @@ extension MainView {
                 HStack(spacing: 8) {
                     Spacer()
                     
-                    Image(systemName: "gear") // TODO: 아이콘 추가
+                    Image(.icnGear) // TODO: 아이콘 추가
                         .resizable()
                         .scaledToFit()
                         .frame(width: 24, height: 24)
@@ -127,14 +144,13 @@ extension MainView {
                 Text("가장 맛있는 족발") // MARK: 가게명
                     .font(.pretendard(.bold, size: 20))
                     .padding(.vertical, 14)
-                
-                
+                      
                 Spacer()
                 
                 Button {
                     ()
                 } label: {
-                    Image(systemName: "gear") // TODO: 아이콘 추가
+                    Image(.icnGear) // TODO: 아이콘 추가
                         .resizable()
                         .scaledToFit()
                         .frame(width: 18, height: 18)
@@ -269,205 +285,189 @@ extension MainView {
                 }
             }
             
-            Capsule()
+            Rectangle()
                 .frame(width: UIScreen.screenWidth / 2, height: 1.5)
                 .foregroundStyle(Color.main500)
                 .offset(x: CGFloat(currentTab) * (UIScreen.screenWidth / 2))
                 .animation(.easeInOut, value: currentTab)
-        }
-        .frame(height: 46)
-        .padding(.top, currentOffset >= 592 ?  min(62, currentOffset - 592) : 0)
-    }
-}
-
-extension MainView {
-    @MainActor
-    func menuTab() -> some View {
-        VStack(spacing: 0) {
-            ScrollView(.horizontal) {
-                HStack(spacing: 10) {
-                    ForEach(MenuType.allCases, id: \.self) { type in
-                        menuTypeButton(name: type.name, value: type.rawValue)
-                    }
-                }
-                .padding(.horizontal, 24)
-            }
             
-            switch currentMenu {
-            case -1:
-                menuList(menus: Menu.recMock, type: .recommended)
-                menuList(menus: Menu.mainMock, type: .main)
-                menuList(menus: Menu.setMock, type: .set)
-                menuList(menus: Menu.sideMock, type: .side)
+            switch currentTab {
             case 0:
-                menuList(menus: Menu.recMock, type: .recommended)
+                menuHeader
             case 1:
-                menuList(menus: Menu.mainMock, type: .main)
-            case 2:
-                menuList(menus: Menu.setMock, type: .set)
-            case 3:
-                menuList(menus: Menu.sideMock, type: .side)
+                eventHeader
             default:
                 EmptyView()
             }
-            
         }
+//        .frame(height: 46)
+        .padding(.top, currentOffset >= 592 ?  min(62, currentOffset - 592) : 0)
     }
     
-    @MainActor
-    func menuRow(menu: Menu) -> some View {
-        HStack(spacing: 0) {
-            LazyImage(url: URL(string: "https://i.namu.wiki/i/I63sEiy-8vUXVhV-I0IZiS9ntT0INuKXgBYAE3QqUvOlToSoEqSgpvEbUmxsFTXtoBRN4WJolyAFEAlDdeZFhQ.webp")) { state in
-                if let image = state.image {
-                    image
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 68, height: 68)
-                        .clipShape(RoundedRectangle(cornerRadius: 5))
-                } else {
-                    RoundedRectangle(cornerRadius: 5) //TODO: placeholder 필요
-                        .frame(width: 68, height: 68)
-                        .foregroundStyle(Color.neutral100)
+    var menuHeader: some View {
+        ScrollView(.horizontal) {
+            HStack(spacing: 10) {
+                ForEach(MenuType.allCases, id: \.self) { type in
+                    menuTypeButton(name: type.name, value: type.rawValue)
                 }
             }
-            .padding(.trailing, 16)
-            
-            VStack(alignment: .leading, spacing: 2) {
-                Text(menu.name)
-                    .font(.pretendard(.medium, size: 16))
-                    .foregroundStyle(Color.neutral800)
-                    .lineLimit(2)
-                Text("\(menu.price)원")
-                    .font(.pretendard(.regular, size: 14))
-                    .foregroundStyle(Color.main500)
-            }
-            
-            Spacer()
+            .padding(.horizontal, 24)
         }
-        .padding(.vertical, 10)
-        .padding(.horizontal, 24)
+        .padding(.vertical, 8)
     }
     
-    @MainActor
-    func menuList(menus: [Menu], type: MenuType) -> some View {
-        VStack(alignment: .leading, spacing: 0) {
-            if !menus.isEmpty {
-                HStack(spacing: 8) {
-                    Image(type.icon)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 24, height: 24)
+    @ViewBuilder
+    var eventHeader: some View {
+        if isEditing {
+            HStack(spacing: 18) {
+                Button {
+                    withAnimation {
+                        if checkAllIdsIncluded() {
+                            selectedEvent.removeAll()
+                        } else {
+                            for event in Event.mock {
+                                if !selectedEvent.contains(where: { $0 == event.id }) {
+                                    selectedEvent.append(event.id)
+                                }
+                            }
+                        }
+                    }
+                } label: {
+                    VStack(spacing: 2) {
+                        Image(checkAllIdsIncluded() ? .icnCircleCheck : .icnCircleEmpty)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 16, height: 16)
+                        
+                        Text("전체")
+                            .font(.pretendard(.regular, size: 12))
+                            .foregroundStyle(Color.neutral500)
+                    }
+                }
+
+                Spacer()
+                
+                Button {
                     
-                    Text(type.name)
-                        .font(.pretendard(.medium, size: 18))
-                        .foregroundStyle(Color.main400)
+                } label: {
+                    HStack(spacing: 5) {
+                        Image(.icnPencil)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 16, height: 16)
+                        
+                        Text("수정")
+                            .font(.pretendard(.medium, size: 14))
+                            .foregroundStyle(Color.neutral500)
+                    }
+                    .padding(.vertical, 9)
+                    .padding(.horizontal, 8)
                 }
-                .padding(.vertical, 4)
-                .padding(.horizontal, 9)
-                .padding(.top, 12)
-                .padding(.leading, 16)
-            }
-            
-            ForEach(Array(zip(menus, menus.indices)), id: \.0) { menu, index in
                 
-                menuRow(menu: menu)
+                Button {
+                    
+                } label: {
+                    HStack(spacing: 5) {
+                        Image(.icnTrashBin)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 16, height: 16)
+                        
+                        Text("삭제")
+                            .font(.pretendard(.medium, size: 14))
+                            .foregroundStyle(Color.neutral500)
+                    }
+                    .padding(.vertical, 9)
+                    .padding(.horizontal, 8)
+                }
                 
-                if index != menus.count - 1 {
-                    Divider()
-                        .foregroundStyle(Color.neutral200)
-                        .padding(.horizontal, 24)
-                } else {
-                    Rectangle()
-                        .frame(height: 6)
-                        .foregroundStyle(Color.neutral100)
+                Button {
+                    withAnimation {
+                        isEditing = false
+                    }
+                } label: {
+                    HStack(spacing: 5) {
+                        Image(.icnSquareEmpty)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 16, height: 16)
+                        
+                        Text("완료")
+                            .font(.pretendard(.medium, size: 14))
+                            .foregroundStyle(Color.neutral500)
+                    }
+                    .padding(.vertical, 9)
+                    .padding(.horizontal, 8)
                 }
             }
-        }
-    }
-    
-    func menuTypeButton(name: String, value: Int) -> some View {
-        Button {
-            withAnimation {
-                if currentMenu == value {
-                    currentMenu = -1
-                } else {
-                    currentMenu = value
+            .padding(.horizontal, 16)
+            .frame(height: 52)
+            .background(Color.neutral100)
+            .overlay(alignment: .bottom) {
+                Divider()
+                    .foregroundStyle(Color.neutral200)
+            }
+        } else {
+            HStack(spacing: 9) {
+                Button {
+                    withAnimation {
+                        isEditing = true
+                    }
+                } label: {
+                    HStack(spacing: 8) {
+                        Spacer()
+                        
+                        Image(.icnPencil)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 16, height: 16)
+                        
+                        Text("편집하기")
+                            .font(.pretendard(.medium, size: 14))
+                            .foregroundStyle(Color.neutral500)
+
+                        Spacer()
+                    }
+                    .padding(.vertical, 10)
+                    .background(Color.neutral100)
+                    .clipShape(RoundedRectangle(cornerRadius: 5))
+                }
+
+                Button {
+                    withAnimation {
+                       ()
+                    }
+                } label: {
+                    HStack(spacing: 8) {
+                        Spacer()
+
+                        Image(.icnAdd)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 16, height: 16)
+                        
+                        Text("추가하기")
+                            .font(.pretendard(.medium, size: 14))
+                            .foregroundStyle(Color.neutral500)
+
+                        Spacer()
+                    }
+                    .padding(.vertical, 10)
+                    .background(Color.neutral100)
+                    .clipShape(RoundedRectangle(cornerRadius: 5))
                 }
             }
-        } label: {
-            Text(name)
-                .font(.pretendard(.regular, size: 12))
-                .foregroundStyle(currentMenu == value ? Color.neutral0 : Color.neutral500)
-                .padding(.vertical, 8)
-                .padding(.horizontal, 12)
-                .background(currentMenu == value ? Color.main500 : Color.neutral0)
-                .clipShape(RoundedRectangle(cornerRadius: 4))
-                .overlay {
-                    RoundedRectangle(cornerRadius: 4)
-                        .strokeBorder(currentMenu == value ? Color.main500 : Color.neutral400)
-                }
-            
-        }
-    }
-}
-
-enum MenuType: Int, CaseIterable {
-    case recommended = 0
-    case main = 1
-    case set = 2
-    case side = 3
-    
-    var name: String {
-        switch self {
-        case .recommended:
-            return "추천 메뉴"
-        case .main:
-            return "메인 메뉴"
-        case .set:
-            return "세트 메뉴"
-        case .side:
-            return "사이드 메뉴"
+            .frame(height: 52)
+            .padding(.horizontal, 24)
         }
     }
     
-    var icon: ImageResource {
-        switch self {
-        case .recommended:
-            return .icnRecommendedMenu
-        case .main:
-            return .icnMainMenu
-        case .set:
-            return .icnSetMenu
-        case .side:
-            return .icnSideMenu
-        }
+    // 임시 함수
+    func checkAllIdsIncluded() -> Bool {
+        let allIds = Set(Event.mock.map { $0.id })
+        let selectedIds = Set(selectedEvent)
+        return allIds.isSubset(of: selectedIds)
     }
-}
-
-struct Menu: Hashable {
-    var name: String
-    var price: Int
-    var type: [MenuType]
-    
-    static let mock: [Menu] = [
-        Menu(name: "불족발 + 막국수 저녁 set", price: 25000, type: [.main, .recommended]),
-        Menu(name: "불닭불족발 + 새콤달콤 비빔 막국수 저녁 요요 배고프다 진짜 맛있겠다아", price: 250000, type: [.main])]
-    
-    static let recMock: [Menu] = {
-        return mock.filter { $0.type.contains(.recommended) }
-    }()
-    
-    static let mainMock: [Menu] = {
-        return mock.filter { $0.type.contains(.main) }
-    }()
-    
-    static let setMock: [Menu] = {
-        return mock.filter { $0.type.contains(.set) }
-    }()
-    
-    static let sideMock: [Menu] = {
-        return mock.filter { $0.type.contains(.side) }
-    }()
 }
 
 #Preview {
