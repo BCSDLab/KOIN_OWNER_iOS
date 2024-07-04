@@ -22,6 +22,9 @@
 		1B5D7E7D2C34DF3000850B30 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5D7E7C2C34DF3000850B30 /* MainView.swift */; };
 		1B5D7E802C34E0C000850B30 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5D7E7F2C34E0C000850B30 /* CustomNavigationBar.swift */; };
 		D229EBC42C33A7C7004D54F9 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = D229EBC32C33A7C7004D54F9 /* .swiftlint.yml */; };
+		D2E5F2232C363CA0000B92CB /* PolicyAgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E5F2222C363CA0000B92CB /* PolicyAgreementView.swift */; };
+		D2E5F2292C366FE0000B92CB /* CustomProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E5F2282C366FE0000B92CB /* CustomProgressBar.swift */; };
+		D2E5F2302C3694F4000B92CB /* AgreementText.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E5F22F2C3694F4000B92CB /* AgreementText.swift */; };
 		D2EE257B2C30A460000B8015 /* koinOwnerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EE257A2C30A460000B8015 /* koinOwnerApp.swift */; };
 		D2EE257D2C30A460000B8015 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EE257C2C30A460000B8015 /* ContentView.swift */; };
 		D2EE257F2C30A463000B8015 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2EE257E2C30A463000B8015 /* Images.xcassets */; };
@@ -42,6 +45,9 @@
 		1B5D7E7C2C34DF3000850B30 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		1B5D7E7F2C34E0C000850B30 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		D229EBC32C33A7C7004D54F9 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		D2E5F2222C363CA0000B92CB /* PolicyAgreementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyAgreementView.swift; sourceTree = "<group>"; };
+		D2E5F2282C366FE0000B92CB /* CustomProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressBar.swift; sourceTree = "<group>"; };
+		D2E5F22F2C3694F4000B92CB /* AgreementText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementText.swift; sourceTree = "<group>"; };
 		D2EE25772C30A460000B8015 /* koinOwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = koinOwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2EE257A2C30A460000B8015 /* koinOwnerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = koinOwnerApp.swift; sourceTree = "<group>"; };
 		D2EE257C2C30A460000B8015 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -124,8 +130,33 @@
 			isa = PBXGroup;
 			children = (
 				1B5D7E7F2C34E0C000850B30 /* CustomNavigationBar.swift */,
+                D2E5F2282C366FE0000B92CB /* CustomProgressBar.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		D2E5F2212C363C58000B92CB /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				D2E5F2222C363CA0000B92CB /* PolicyAgreementView.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		D2E5F22D2C3694D9000B92CB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D2E5F22E2C3694DD000B92CB /* Register */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D2E5F22E2C3694DD000B92CB /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				D2E5F22F2C3694F4000B92CB /* AgreementText.swift */,
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 		D2EE256E2C30A460000B8015 = {
@@ -169,6 +200,7 @@
 		D2EE25892C3258EB000B8015 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				D2E5F22D2C3694D9000B92CB /* Model */,
 				1B5D7E512C32A1EF00850B30 /* Common */,
 				D2EE258A2C325902000B8015 /* Modules */,
 			);
@@ -178,6 +210,7 @@
 		D2EE258A2C325902000B8015 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				D2E5F2212C363C58000B92CB /* Register */,
 				1B5D7E7B2C34DED600850B30 /* Main */,
 			);
 			path = Modules;
@@ -295,6 +328,12 @@
 				D2EE257D2C30A460000B8015 /* ContentView.swift in Sources */,
 				1B303B662C35107300E1ECEA /* UIScreen+Size.swift in Sources */,
 				1B303B6D2C389D4200E1ECEA /* UINavigationController+SwipeToDismiss.swift in Sources */,
+				1B5D7E802C34E0C000850B30 /* CustomNavigationBar.swift in Sources */,
+				D2E5F2302C3694F4000B92CB /* AgreementText.swift in Sources */,
+				D2E5F2232C363CA0000B92CB /* PolicyAgreementView.swift in Sources */,
+				D2EE257D2C30A460000B8015 /* ContentView.swift in Sources */,
+				D2E5F2292C366FE0000B92CB /* CustomProgressBar.swift in Sources */,
+				1B303B662C35107300E1ECEA /* UIScreen+Size.swift in Sources */,
 				1B5D7E7D2C34DF3000850B30 /* MainView.swift in Sources */,
 				1B5D7E542C32A25A00850B30 /* Font+Custom.swift in Sources */,
 				1B303B6B2C3667DC00E1ECEA /* MainView+EventTab.swift in Sources */,
