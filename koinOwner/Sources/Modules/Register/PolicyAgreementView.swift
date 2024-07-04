@@ -39,7 +39,7 @@ struct PolicyAgreementView: View {
                     }.padding(.leading, 12)
                     Text("모두 동의합니다.")
                         .font(.pretendard(.medium, size: 14))
-                        .foregroundColor(Color(.main500))
+                        .foregroundStyle(Color(.main500))
                     Spacer()
                 }.frame(maxWidth: .infinity, minHeight: 40).background(Color.neutral100).padding(.top, 9)
                 HStack {
@@ -52,7 +52,7 @@ struct PolicyAgreementView: View {
                     }.padding(.leading, 12)
                     Text("개인정보 이용약관 (필수)")
                         .font(.pretendard(.medium, size: 14))
-                        .foregroundColor(Color(.neutral500))
+                        .foregroundStyle(Color(.neutral500))
                     Spacer()
                 }.padding(.top, 16).padding(.bottom, 16)
                 ScrollView {
@@ -60,7 +60,7 @@ struct PolicyAgreementView: View {
                 }.frame(maxWidth: .infinity, maxHeight: 168).background(
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(style: StrokeStyle(lineWidth: 1, dash: [5]))
-                        .foregroundColor(.neutral500)
+                        .foregroundStyle(.neutral500)
                 )
                 HStack {
                     Button(action: {
@@ -72,7 +72,7 @@ struct PolicyAgreementView: View {
                     }.padding(.leading, 12)
                     Text("코인 이용약관 (필수)")
                         .font(.pretendard(.medium, size: 14))
-                        .foregroundColor(Color(.neutral500))
+                        .foregroundStyle(Color(.neutral500))
                     Spacer()
                 }.padding(.top, 16).padding(.bottom, 16)
                 ScrollView {
@@ -80,7 +80,7 @@ struct PolicyAgreementView: View {
                 }.frame(maxWidth: .infinity, maxHeight: 168).background(
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(style: StrokeStyle(lineWidth: 1, dash: [5]))
-                        .foregroundColor(.neutral500)
+                        .foregroundStyle(.neutral500)
                 )
                 
                 Spacer()
@@ -89,7 +89,7 @@ struct PolicyAgreementView: View {
                 }) {
                     Text("다음")
                         .font(.pretendard(.medium, size: 15))
-                        .foregroundColor(isKoinButtonToggled && isPersonalInformationButtonToggled ? Color.neutral0 : Color.neutral600)
+                        .foregroundStyle(isKoinButtonToggled && isPersonalInformationButtonToggled ? Color.neutral0 : Color.neutral600)
                         .frame(maxWidth: .infinity, minHeight: 48)
                         .background(isKoinButtonToggled && isPersonalInformationButtonToggled ? Color.main500 : Color.neutral300)
                         .cornerRadius(4)
