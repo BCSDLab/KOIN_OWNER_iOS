@@ -18,3 +18,4 @@ force_try:
 disabled_rules:
 - leading_whitespace
 - trailing_whitespace
+- line_length
