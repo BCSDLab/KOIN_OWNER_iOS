@@ -105,4 +105,3 @@ struct PolicyAgreementView: View {
 #Preview {
     PolicyAgreementView()
 }
-
