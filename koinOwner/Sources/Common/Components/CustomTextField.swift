@@ -31,7 +31,7 @@ struct CustomTextField: View {
             .frame(height: 46)
             .background(Color(.neutral100))
             .cornerRadius(4)
-            .foregroundColor(Color.neutral800)
+            .foregroundStyle(Color.neutral800)
        }
     }
 }
