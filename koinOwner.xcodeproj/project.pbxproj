@@ -13,6 +13,7 @@
 		1B303B662C35107300E1ECEA /* UIScreen+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B303B652C35107300E1ECEA /* UIScreen+Size.swift */; };
 		1B303B692C365F9F00E1ECEA /* MainView+MenuTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B303B682C365F9F00E1ECEA /* MainView+MenuTab.swift */; };
 		1B303B6B2C3667DC00E1ECEA /* MainView+EventTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B303B6A2C3667DC00E1ECEA /* MainView+EventTab.swift */; };
+		1B303B6D2C389D4200E1ECEA /* UINavigationController+SwipeToDismiss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B303B6C2C389D4200E1ECEA /* UINavigationController+SwipeToDismiss.swift */; };
 		1B5D7E4B2C329AF200850B30 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1B5D7E482C329AF200850B30 /* Pretendard-Regular.otf */; };
 		1B5D7E4C2C329AF200850B30 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1B5D7E492C329AF200850B30 /* Pretendard-Bold.otf */; };
 		1B5D7E4D2C329AF200850B30 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1B5D7E4A2C329AF200850B30 /* Pretendard-Medium.otf */; };
@@ -32,6 +33,7 @@
 		1B303B652C35107300E1ECEA /* UIScreen+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Size.swift"; sourceTree = "<group>"; };
 		1B303B682C365F9F00E1ECEA /* MainView+MenuTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainView+MenuTab.swift"; sourceTree = "<group>"; };
 		1B303B6A2C3667DC00E1ECEA /* MainView+EventTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainView+EventTab.swift"; sourceTree = "<group>"; };
+		1B303B6C2C389D4200E1ECEA /* UINavigationController+SwipeToDismiss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+SwipeToDismiss.swift"; sourceTree = "<group>"; };
 		1B5D7E482C329AF200850B30 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		1B5D7E492C329AF200850B30 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		1B5D7E4A2C329AF200850B30 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			children = (
 				1B5D7E532C32A25A00850B30 /* Font+Custom.swift */,
 				1B303B652C35107300E1ECEA /* UIScreen+Size.swift */,
+				1B303B6C2C389D4200E1ECEA /* UINavigationController+SwipeToDismiss.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				1B5D7E802C34E0C000850B30 /* CustomNavigationBar.swift in Sources */,
 				D2EE257D2C30A460000B8015 /* ContentView.swift in Sources */,
 				1B303B662C35107300E1ECEA /* UIScreen+Size.swift in Sources */,
+				1B303B6D2C389D4200E1ECEA /* UINavigationController+SwipeToDismiss.swift in Sources */,
 				1B5D7E7D2C34DF3000850B30 /* MainView.swift in Sources */,
 				1B5D7E542C32A25A00850B30 /* Font+Custom.swift in Sources */,
 				1B303B6B2C3667DC00E1ECEA /* MainView+EventTab.swift in Sources */,
