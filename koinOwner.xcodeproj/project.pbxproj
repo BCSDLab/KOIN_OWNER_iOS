@@ -24,6 +24,7 @@
 		D229EBC42C33A7C7004D54F9 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = D229EBC32C33A7C7004D54F9 /* .swiftlint.yml */; };
 		D28E2F152C369CC2004A64D5 /* RegistrationFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E2F142C369CC2004A64D5 /* RegistrationFormView.swift */; };
 		D28E2F172C36C8BE004A64D5 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E2F162C36C8BE004A64D5 /* CustomTextField.swift */; };
+		D28E2F192C381BE6004A64D5 /* BusinessVerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E2F182C381BE6004A64D5 /* BusinessVerificationView.swift */; };
 		D2E5F2232C363CA0000B92CB /* PolicyAgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E5F2222C363CA0000B92CB /* PolicyAgreementView.swift */; };
 		D2E5F2292C366FE0000B92CB /* CustomProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E5F2282C366FE0000B92CB /* CustomProgressBar.swift */; };
 		D2E5F2302C3694F4000B92CB /* AgreementText.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E5F22F2C3694F4000B92CB /* AgreementText.swift */; };
@@ -49,6 +50,7 @@
 		D229EBC32C33A7C7004D54F9 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		D28E2F142C369CC2004A64D5 /* RegistrationFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationFormView.swift; sourceTree = "<group>"; };
 		D28E2F162C36C8BE004A64D5 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		D28E2F182C381BE6004A64D5 /* BusinessVerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessVerificationView.swift; sourceTree = "<group>"; };
 		D2E5F2222C363CA0000B92CB /* PolicyAgreementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyAgreementView.swift; sourceTree = "<group>"; };
 		D2E5F2282C366FE0000B92CB /* CustomProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressBar.swift; sourceTree = "<group>"; };
 		D2E5F22F2C3694F4000B92CB /* AgreementText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementText.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 			children = (
 				D2E5F2222C363CA0000B92CB /* PolicyAgreementView.swift */,
 				D28E2F142C369CC2004A64D5 /* RegistrationFormView.swift */,
+				D28E2F182C381BE6004A64D5 /* BusinessVerificationView.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				1B5D7E542C32A25A00850B30 /* Font+Custom.swift in Sources */,
 				1B303B6B2C3667DC00E1ECEA /* MainView+EventTab.swift in Sources */,
 				D2EE257B2C30A460000B8015 /* koinOwnerApp.swift in Sources */,
+				D28E2F192C381BE6004A64D5 /* BusinessVerificationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
