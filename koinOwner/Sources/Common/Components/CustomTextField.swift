@@ -9,9 +9,15 @@ import SwiftUI
 
 struct CustomTextField: View {
     let placeholder: String
-    let isSecure: Bool = false
+    var isSecure: Bool
     @Binding var text: String
 
+    init(placeholder: String, isSecure: Bool = false, text: Binding<String>) {
+        self.placeholder = placeholder
+        self.isSecure = isSecure
+        self._text = text
+    }
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
             Group {
