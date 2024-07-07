@@ -62,7 +62,7 @@ struct BusinessVerificationView: View {
                     } .foregroundStyle(Color.neutral600)
                         .frame(maxWidth: .infinity, minHeight: 48)
                         .background(Color.neutral100)
-                        .cornerRadius(4)
+                        .clipShape(RoundedRectangle(cornerRadius: 4))
                     
                 }.padding(.top, 5)
                 Spacer()
@@ -74,7 +74,7 @@ struct BusinessVerificationView: View {
                         .foregroundStyle(Color.neutral600)
                         .frame(maxWidth: .infinity, minHeight: 48)
                         .background(Color.neutral300)
-                        .cornerRadius(4)
+                        .clipShape(RoundedRectangle(cornerRadius: 4))
                 }
                 .padding(.bottom, 10)
             }

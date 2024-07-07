@@ -42,7 +42,7 @@ struct RegistrationFormView: View {
                             .font(.pretendard(.medium, size: 15))
                             .foregroundStyle(Color.neutral0)
                             .background(Color.main500)
-                            .cornerRadius(4)
+                            .clipShape(RoundedRectangle(cornerRadius: 4))
                     }
                 }
                 Text("인증번호").padding(.top, 25).padding(.leading, 8)
@@ -70,7 +70,7 @@ struct RegistrationFormView: View {
                         .foregroundStyle(Color.neutral600)
                         .frame(maxWidth: .infinity, minHeight: 48)
                         .background(Color.neutral300)
-                        .cornerRadius(4)
+                        .clipShape(RoundedRectangle(cornerRadius: 4))
                 }
                 .padding(.bottom, 10)
             }

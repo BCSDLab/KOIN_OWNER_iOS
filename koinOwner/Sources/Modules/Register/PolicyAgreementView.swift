@@ -92,7 +92,7 @@ struct PolicyAgreementView: View {
                         .foregroundStyle(isKoinButtonToggled && isPersonalInformationButtonToggled ? Color.neutral0 : Color.neutral600)
                         .frame(maxWidth: .infinity, minHeight: 48)
                         .background(isKoinButtonToggled && isPersonalInformationButtonToggled ? Color.main500 : Color.neutral300)
-                        .cornerRadius(4)
+                        .clipShape(RoundedRectangle(cornerRadius: 4))
                 }
                 .padding(.bottom, 10)
             }.padding(.top, 16).padding(.horizontal, 16)
