@@ -54,7 +54,7 @@ struct PolicyAgreementView: View {
                         .font(.pretendard(.medium, size: 14))
                         .foregroundStyle(Color(.neutral500))
                     Spacer()
-                }.padding(.top, 16).padding(.bottom, 16)
+                }.padding(.vertical, 16)
                 ScrollView {
                     Text(AgreementText.personalInformation.description).font(.pretendard(.regular, size: 10)).padding(12).lineSpacing(6)
                 }.frame(maxWidth: .infinity, maxHeight: 168).background(
@@ -74,7 +74,7 @@ struct PolicyAgreementView: View {
                         .font(.pretendard(.medium, size: 14))
                         .foregroundStyle(Color(.neutral500))
                     Spacer()
-                }.padding(.top, 16).padding(.bottom, 16)
+                }.padding(.vertical, 16)
                 ScrollView {
                     Text(AgreementText.koin.description).font(.pretendard(.regular, size: 10)).padding(12).lineSpacing(6)
                 }.frame(maxWidth: .infinity, maxHeight: 168).background(
@@ -95,7 +95,7 @@ struct PolicyAgreementView: View {
                         .cornerRadius(4)
                 }
                 .padding(.bottom, 10)
-            }.padding(.top, 16).padding(.leading, 16).padding(.trailing, 16)
+            }.padding(.top, 16).padding(.horizontal, 16)
                 .navigationTitle("회원가입")
                 .navigationBarTitleDisplayMode(.inline)
         }

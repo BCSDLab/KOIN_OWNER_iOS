@@ -74,7 +74,7 @@ struct RegistrationFormView: View {
                 }
                 .padding(.bottom, 10)
             }
-            .padding(.top, 16).padding(.leading, 16).padding(.trailing, 16)
+            .padding(.top, 16).padding(.horizontal, 16)
                 .navigationTitle("회원가입")
                 .navigationBarTitleDisplayMode(.inline)
         }
