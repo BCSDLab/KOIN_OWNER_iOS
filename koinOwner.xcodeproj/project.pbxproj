@@ -22,6 +22,7 @@
 		1B5D7E7D2C34DF3000850B30 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5D7E7C2C34DF3000850B30 /* MainView.swift */; };
 		1B5D7E802C34E0C000850B30 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5D7E7F2C34E0C000850B30 /* CustomNavigationBar.swift */; };
 		D229EBC42C33A7C7004D54F9 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = D229EBC32C33A7C7004D54F9 /* .swiftlint.yml */; };
+		D23944772C3BBE9800048F45 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23944762C3BBE9800048F45 /* RegisterView.swift */; };
 		D28E2F152C369CC2004A64D5 /* RegistrationFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E2F142C369CC2004A64D5 /* RegistrationFormView.swift */; };
 		D28E2F172C36C8BE004A64D5 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E2F162C36C8BE004A64D5 /* CustomTextField.swift */; };
 		D28E2F192C381BE6004A64D5 /* BusinessVerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E2F182C381BE6004A64D5 /* BusinessVerificationView.swift */; };
@@ -48,6 +49,7 @@
 		1B5D7E7C2C34DF3000850B30 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		1B5D7E7F2C34E0C000850B30 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		D229EBC32C33A7C7004D54F9 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		D23944762C3BBE9800048F45 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		D28E2F142C369CC2004A64D5 /* RegistrationFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationFormView.swift; sourceTree = "<group>"; };
 		D28E2F162C36C8BE004A64D5 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		D28E2F182C381BE6004A64D5 /* BusinessVerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessVerificationView.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				D2E5F2222C363CA0000B92CB /* PolicyAgreementView.swift */,
 				D28E2F142C369CC2004A64D5 /* RegistrationFormView.swift */,
 				D28E2F182C381BE6004A64D5 /* BusinessVerificationView.swift */,
+				D23944762C3BBE9800048F45 /* RegisterView.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				1B5D7E802C34E0C000850B30 /* CustomNavigationBar.swift in Sources */,
 				D28E2F172C36C8BE004A64D5 /* CustomTextField.swift in Sources */,
 				D2E5F2302C3694F4000B92CB /* AgreementText.swift in Sources */,
+				D23944772C3BBE9800048F45 /* RegisterView.swift in Sources */,
 				D2E5F2232C363CA0000B92CB /* PolicyAgreementView.swift in Sources */,
 				D28E2F152C369CC2004A64D5 /* RegistrationFormView.swift in Sources */,
 				D2EE257D2C30A460000B8015 /* ContentView.swift in Sources */,

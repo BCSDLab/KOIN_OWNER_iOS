@@ -12,19 +12,7 @@ struct BusinessVerificationView: View {
     @State private var shopName: String = ""
     @State private var businessRegistrationNumber: String = ""
     var body: some View {
-        NavigationView {
             VStack(alignment: .leading, spacing: 0) {
-                HStack {
-                    Text("3. 사업자 인증")
-                        .font(.pretendard(.medium, size: 16))
-                        .foregroundStyle(Color.main500)
-                    Spacer()
-                    Text("3 / 3")
-                        .font(.pretendard(.medium, size: 16))
-                        .foregroundStyle(Color.main500)
-                }
-                CustomProgressBar(progress: 1)
-                    .frame(height: 8).padding(.top, 8)
                 Text("대표자명(실명)").padding(.top, 25).padding(.leading, 8)
                     .font(.pretendard(.medium, size: 14))
                     .foregroundStyle(Color(.neutral800))
@@ -65,22 +53,6 @@ struct BusinessVerificationView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 4))
                     
                 }.padding(.top, 5)
-                Spacer()
-                Button(action: {
-                    
-                }) {
-                    Text("다음")
-                        .font(.pretendard(.medium, size: 15))
-                        .foregroundStyle(Color.neutral600)
-                        .frame(maxWidth: .infinity, minHeight: 48)
-                        .background(Color.neutral300)
-                        .clipShape(RoundedRectangle(cornerRadius: 4))
-                }
-                .padding(.bottom, 10)
-            }
-            .padding(.top, 16).padding(.horizontal, 16)
-                .navigationTitle("회원가입")
-                .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

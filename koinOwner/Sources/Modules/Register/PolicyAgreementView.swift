@@ -14,19 +14,8 @@ struct PolicyAgreementView: View {
     @State private var isKoinButtonToggled = false
     
     var body: some View {
-        NavigationView {
             VStack(spacing: 0) {
-                HStack {
-                    Text("1. 약관 동의")
-                        .font(.pretendard(.medium, size: 16))
-                        .foregroundStyle(Color.main500)
-                    Spacer()
-                    Text("1 / 3")
-                        .font(.pretendard(.medium, size: 16))
-                        .foregroundStyle(Color.main500)
-                }
-                CustomProgressBar(progress: 0.33)
-                    .frame(height: 8).padding(.top, 8)
+    
                 HStack {
                     Button(action: {
                         isAgreeAllButtonToggled.toggle()
@@ -82,22 +71,7 @@ struct PolicyAgreementView: View {
                         .stroke(style: StrokeStyle(lineWidth: 1, dash: [5]))
                         .foregroundStyle(.neutral500)
                 )
-                
-                Spacer()
-                Button(action: {
-                    
-                }) {
-                    Text("다음")
-                        .font(.pretendard(.medium, size: 15))
-                        .foregroundStyle(isKoinButtonToggled && isPersonalInformationButtonToggled ? Color.neutral0 : Color.neutral600)
-                        .frame(maxWidth: .infinity, minHeight: 48)
-                        .background(isKoinButtonToggled && isPersonalInformationButtonToggled ? Color.main500 : Color.neutral300)
-                        .clipShape(RoundedRectangle(cornerRadius: 4))
-                }
-                .padding(.bottom, 10)
-            }.padding(.top, 16).padding(.horizontal, 16)
-                .navigationTitle("회원가입")
-                .navigationBarTitleDisplayMode(.inline)
+           
         }
     }
 }
