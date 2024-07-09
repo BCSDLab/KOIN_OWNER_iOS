@@ -24,6 +24,7 @@
 		D229EBC42C33A7C7004D54F9 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = D229EBC32C33A7C7004D54F9 /* .swiftlint.yml */; };
 		D23944772C3BBE9800048F45 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23944762C3BBE9800048F45 /* RegisterView.swift */; };
 		D239449A2C3CC63800048F45 /* FindPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23944992C3CC63800048F45 /* FindPasswordView.swift */; };
+		D239449C2C3CC6D400048F45 /* AccountVerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D239449B2C3CC6D400048F45 /* AccountVerificationView.swift */; };
 		D28E2F152C369CC2004A64D5 /* RegistrationFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E2F142C369CC2004A64D5 /* RegistrationFormView.swift */; };
 		D28E2F172C36C8BE004A64D5 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E2F162C36C8BE004A64D5 /* CustomTextField.swift */; };
 		D28E2F192C381BE6004A64D5 /* BusinessVerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E2F182C381BE6004A64D5 /* BusinessVerificationView.swift */; };
@@ -52,6 +53,7 @@
 		D229EBC32C33A7C7004D54F9 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		D23944762C3BBE9800048F45 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		D23944992C3CC63800048F45 /* FindPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPasswordView.swift; sourceTree = "<group>"; };
+		D239449B2C3CC6D400048F45 /* AccountVerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVerificationView.swift; sourceTree = "<group>"; };
 		D28E2F142C369CC2004A64D5 /* RegistrationFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationFormView.swift; sourceTree = "<group>"; };
 		D28E2F162C36C8BE004A64D5 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		D28E2F182C381BE6004A64D5 /* BusinessVerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessVerificationView.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				D23944992C3CC63800048F45 /* FindPasswordView.swift */,
+				D239449B2C3CC6D400048F45 /* AccountVerificationView.swift */,
 			);
 			path = FindPassword;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				1B5D7E7D2C34DF3000850B30 /* MainView.swift in Sources */,
 				1B5D7E542C32A25A00850B30 /* Font+Custom.swift in Sources */,
 				1B303B6B2C3667DC00E1ECEA /* MainView+EventTab.swift in Sources */,
+				D239449C2C3CC6D400048F45 /* AccountVerificationView.swift in Sources */,
 				D2EE257B2C30A460000B8015 /* koinOwnerApp.swift in Sources */,
 				D28E2F192C381BE6004A64D5 /* BusinessVerificationView.swift in Sources */,
 			);
