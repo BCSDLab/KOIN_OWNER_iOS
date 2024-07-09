@@ -29,7 +29,12 @@ struct FindPasswordView: View {
                 }
                 CustomProgressBar(progress: Double(currentStep) / 2.0)
                     .frame(height: 8).padding(.top, 8)
-
+                switch currentStep {
+                case 1:
+                    AccountVerificationView()
+                default:
+                    ChangePasswordView()
+                }
                 Spacer()
                 Button(action: {
                     currentStep += 1
