@@ -23,6 +23,7 @@
 		1B5D7E802C34E0C000850B30 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5D7E7F2C34E0C000850B30 /* CustomNavigationBar.swift */; };
 		D229EBC42C33A7C7004D54F9 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = D229EBC32C33A7C7004D54F9 /* .swiftlint.yml */; };
 		D23944772C3BBE9800048F45 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23944762C3BBE9800048F45 /* RegisterView.swift */; };
+		D239449A2C3CC63800048F45 /* FindPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23944992C3CC63800048F45 /* FindPasswordView.swift */; };
 		D28E2F152C369CC2004A64D5 /* RegistrationFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E2F142C369CC2004A64D5 /* RegistrationFormView.swift */; };
 		D28E2F172C36C8BE004A64D5 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E2F162C36C8BE004A64D5 /* CustomTextField.swift */; };
 		D28E2F192C381BE6004A64D5 /* BusinessVerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E2F182C381BE6004A64D5 /* BusinessVerificationView.swift */; };
@@ -50,6 +51,7 @@
 		1B5D7E7F2C34E0C000850B30 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		D229EBC32C33A7C7004D54F9 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		D23944762C3BBE9800048F45 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		D23944992C3CC63800048F45 /* FindPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPasswordView.swift; sourceTree = "<group>"; };
 		D28E2F142C369CC2004A64D5 /* RegistrationFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationFormView.swift; sourceTree = "<group>"; };
 		D28E2F162C36C8BE004A64D5 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		D28E2F182C381BE6004A64D5 /* BusinessVerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessVerificationView.swift; sourceTree = "<group>"; };
@@ -144,6 +146,14 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		D23944922C3CC56300048F45 /* FindPassword */ = {
+			isa = PBXGroup;
+			children = (
+				D23944992C3CC63800048F45 /* FindPasswordView.swift */,
+			);
+			path = FindPassword;
+			sourceTree = "<group>";
+		};
 		D2E5F2212C363C58000B92CB /* Register */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +232,7 @@
 		D2EE258A2C325902000B8015 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				D23944922C3CC56300048F45 /* FindPassword */,
 				D2E5F2212C363C58000B92CB /* Register */,
 				1B5D7E7B2C34DED600850B30 /* Main */,
 			);
@@ -335,6 +346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D239449A2C3CC63800048F45 /* FindPasswordView.swift in Sources */,
 				1B303B692C365F9F00E1ECEA /* MainView+MenuTab.swift in Sources */,
 				1B5D7E802C34E0C000850B30 /* CustomNavigationBar.swift in Sources */,
 				D2EE257D2C30A460000B8015 /* ContentView.swift in Sources */,
