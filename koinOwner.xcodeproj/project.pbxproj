@@ -17,6 +17,7 @@
 		1B303B702C3E49AD00E1ECEA /* StoreRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B303B6F2C3E49AD00E1ECEA /* StoreRegisterView.swift */; };
 		1B303B732C3E49E100E1ECEA /* StoreRegisterEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B303B722C3E49E100E1ECEA /* StoreRegisterEntryView.swift */; };
 		1B303B752C3E4E9400E1ECEA /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B303B742C3E4E9400E1ECEA /* CustomButton.swift */; };
+		1B303B772C3E568800E1ECEA /* CategorySelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B303B762C3E568800E1ECEA /* CategorySelectView.swift */; };
 		1B5D7E4B2C329AF200850B30 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1B5D7E482C329AF200850B30 /* Pretendard-Regular.otf */; };
 		1B5D7E4C2C329AF200850B30 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1B5D7E492C329AF200850B30 /* Pretendard-Bold.otf */; };
 		1B5D7E4D2C329AF200850B30 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1B5D7E4A2C329AF200850B30 /* Pretendard-Medium.otf */; };
@@ -49,6 +50,7 @@
 		1B303B6F2C3E49AD00E1ECEA /* StoreRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreRegisterView.swift; sourceTree = "<group>"; };
 		1B303B722C3E49E100E1ECEA /* StoreRegisterEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreRegisterEntryView.swift; sourceTree = "<group>"; };
 		1B303B742C3E4E9400E1ECEA /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		1B303B762C3E568800E1ECEA /* CategorySelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectView.swift; sourceTree = "<group>"; };
 		1B5D7E482C329AF200850B30 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		1B5D7E492C329AF200850B30 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		1B5D7E4A2C329AF200850B30 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 		1B303B712C3E49B100E1ECEA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1B303B762C3E568800E1ECEA /* CategorySelectView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 				1B5D7E542C32A25A00850B30 /* Font+Custom.swift in Sources */,
 				1B303B6B2C3667DC00E1ECEA /* MainView+EventTab.swift in Sources */,
 				D239449C2C3CC6D400048F45 /* AccountVerificationView.swift in Sources */,
+				1B303B772C3E568800E1ECEA /* CategorySelectView.swift in Sources */,
 				D2EE257B2C30A460000B8015 /* koinOwnerApp.swift in Sources */,
 				1B303B732C3E49E100E1ECEA /* StoreRegisterEntryView.swift in Sources */,
 				D28E2F192C381BE6004A64D5 /* BusinessVerificationView.swift in Sources */,

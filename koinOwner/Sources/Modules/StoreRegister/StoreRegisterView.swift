@@ -8,34 +8,61 @@
 import SwiftUI
 
 struct StoreRegisterView: View {
+    let registerType: StoreRegisterType
+    @State var currentStep: Int = 1
+    
     var body: some View {
         VStack(spacing: 0) {
-            Spacer()
+            HStack(spacing: 0) {
+                switch currentStep {
+                case 1: Text("1. 카테고리 설정")
+                case 2: Text("2. 메인 정보 입력")
+                case 3: Text("3. 세부 정보 입력")
+                case 4: Text("2. 가게 정보 확인")
+                default: EmptyView()
+                }
+                
+                Spacer()
+                
+                Text("\(currentStep) / 4")
+            }
+            .font(.pretendard(.medium, size: 16))
+            .foregroundStyle(Color.main500)
+            .padding(.horizontal, 24)
+       
+            CustomProgressBar(progress: Double(currentStep) / 4.0)
+                .padding(.top, 8)
+                .padding(.bottom, 40)
+                .padding(.horizontal, 24)
             
-            Image(.imgEnterInfo)
-                .resizable()
-                .scaledToFit()
-                .frame(width: 55, height: 55)
-                .padding(.bottom, 38)
-            
-            Text("가게 정보 기입")
-                .font(.pretendard(.bold, size: 24))
-                .foregroundStyle(Color.main500)
-                .padding(.bottom, 20)
-
-            Text("가게의 다양한 정보를 입력 및 수정하여 학생들에게 최신 가게 정보를 알려주세요.")
-                .font(.pretendard(.medium, size: 16))
-                .foregroundStyle(Color.neutral500)
-                .multilineTextAlignment(.center)
-                .padding(.horizontal, 53)
-                .padding(.bottom, 55)
-            
-            
+            Group {
+                switch currentStep {
+                case 1: CategorySelectView(currentStep: $currentStep)
+                case 2: Text("2. 메인 정보 입력")
+                case 3: Text("3. 세부 정보 입력")
+                case 4: Text("2. 가게 정보 확인")
+                default: EmptyView()
+                }
+            }
         }
-        .customNavigationBar(showBackButton: true, isColored: false)
+        .customNavigationBar(registerType.title, showBackButton: true, isColored: false)
+    }
+}
+
+enum StoreRegisterType {
+    case register
+    case management
+    
+    var title: String {
+        switch self {
+        case .register:
+            return "가게 등록"
+        case .management:
+            return "가게 관리"
+        }
     }
 }
 
 #Preview {
-    StoreRegisterView()
+    StoreRegisterView(registerType: .management)
 }
