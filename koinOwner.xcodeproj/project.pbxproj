@@ -14,6 +14,8 @@
 		1B303B692C365F9F00E1ECEA /* MainView+MenuTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B303B682C365F9F00E1ECEA /* MainView+MenuTab.swift */; };
 		1B303B6B2C3667DC00E1ECEA /* MainView+EventTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B303B6A2C3667DC00E1ECEA /* MainView+EventTab.swift */; };
 		1B303B6D2C389D4200E1ECEA /* UINavigationController+SwipeToDismiss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B303B6C2C389D4200E1ECEA /* UINavigationController+SwipeToDismiss.swift */; };
+		1B303B702C3E49AD00E1ECEA /* StoreRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B303B6F2C3E49AD00E1ECEA /* StoreRegisterView.swift */; };
+		1B303B732C3E49E100E1ECEA /* StoreRegisterEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B303B722C3E49E100E1ECEA /* StoreRegisterEntryView.swift */; };
 		1B5D7E4B2C329AF200850B30 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1B5D7E482C329AF200850B30 /* Pretendard-Regular.otf */; };
 		1B5D7E4C2C329AF200850B30 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1B5D7E492C329AF200850B30 /* Pretendard-Bold.otf */; };
 		1B5D7E4D2C329AF200850B30 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1B5D7E4A2C329AF200850B30 /* Pretendard-Medium.otf */; };
@@ -43,6 +45,8 @@
 		1B303B682C365F9F00E1ECEA /* MainView+MenuTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainView+MenuTab.swift"; sourceTree = "<group>"; };
 		1B303B6A2C3667DC00E1ECEA /* MainView+EventTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainView+EventTab.swift"; sourceTree = "<group>"; };
 		1B303B6C2C389D4200E1ECEA /* UINavigationController+SwipeToDismiss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+SwipeToDismiss.swift"; sourceTree = "<group>"; };
+		1B303B6F2C3E49AD00E1ECEA /* StoreRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreRegisterView.swift; sourceTree = "<group>"; };
+		1B303B722C3E49E100E1ECEA /* StoreRegisterEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreRegisterEntryView.swift; sourceTree = "<group>"; };
 		1B5D7E482C329AF200850B30 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		1B5D7E492C329AF200850B30 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		1B5D7E4A2C329AF200850B30 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
@@ -88,6 +92,23 @@
 			children = (
 				1B303B682C365F9F00E1ECEA /* MainView+MenuTab.swift */,
 				1B303B6A2C3667DC00E1ECEA /* MainView+EventTab.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1B303B6E2C3E492C00E1ECEA /* StoreRegister */ = {
+			isa = PBXGroup;
+			children = (
+				1B303B712C3E49B100E1ECEA /* Views */,
+				1B303B6F2C3E49AD00E1ECEA /* StoreRegisterView.swift */,
+				1B303B722C3E49E100E1ECEA /* StoreRegisterEntryView.swift */,
+			);
+			path = StoreRegister;
+			sourceTree = "<group>";
+		};
+		1B303B712C3E49B100E1ECEA /* Views */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -238,6 +259,7 @@
 		D2EE258A2C325902000B8015 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				1B303B6E2C3E492C00E1ECEA /* StoreRegister */,
 				D23944922C3CC56300048F45 /* FindPassword */,
 				D2E5F2212C363C58000B92CB /* Register */,
 				1B5D7E7B2C34DED600850B30 /* Main */,
@@ -358,6 +380,7 @@
 				1B5D7E802C34E0C000850B30 /* CustomNavigationBar.swift in Sources */,
 				D2EE257D2C30A460000B8015 /* ContentView.swift in Sources */,
 				1B303B662C35107300E1ECEA /* UIScreen+Size.swift in Sources */,
+				1B303B702C3E49AD00E1ECEA /* StoreRegisterView.swift in Sources */,
 				1B303B6D2C389D4200E1ECEA /* UINavigationController+SwipeToDismiss.swift in Sources */,
 				1B5D7E802C34E0C000850B30 /* CustomNavigationBar.swift in Sources */,
 				D28E2F172C36C8BE004A64D5 /* CustomTextField.swift in Sources */,
@@ -373,6 +396,7 @@
 				1B303B6B2C3667DC00E1ECEA /* MainView+EventTab.swift in Sources */,
 				D239449C2C3CC6D400048F45 /* AccountVerificationView.swift in Sources */,
 				D2EE257B2C30A460000B8015 /* koinOwnerApp.swift in Sources */,
+				1B303B732C3E49E100E1ECEA /* StoreRegisterEntryView.swift in Sources */,
 				D28E2F192C381BE6004A64D5 /* BusinessVerificationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
