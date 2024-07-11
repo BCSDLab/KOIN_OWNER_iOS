@@ -40,7 +40,7 @@ struct StoreRegisterView: View {
                 case 1: CategorySelectView(currentStep: $currentStep)
                 case 2: StoreMainInfoView(currentStep: $currentStep)
                 case 3: StoreDetailInfoView(currentStep: $currentStep)
-                case 4: Text("2. 가게 정보 확인")
+                case 4: StoreInfoConfirmView(currentStep: $currentStep)
                 default: EmptyView()
                 }
             }

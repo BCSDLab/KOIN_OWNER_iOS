@@ -21,6 +21,7 @@
 		1B303B792C3F6CFF00E1ECEA /* StoreMainInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B303B782C3F6CFF00E1ECEA /* StoreMainInfoView.swift */; };
 		1B303B7B2C3F72DB00E1ECEA /* StoreDetailInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B303B7A2C3F72DB00E1ECEA /* StoreDetailInfoView.swift */; };
 		1B303B7D2C3F77E100E1ECEA /* StoreInfoConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B303B7C2C3F77E100E1ECEA /* StoreInfoConfirmView.swift */; };
+		1B303B7F2C3F801400E1ECEA /* StoreRegisterSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B303B7E2C3F801400E1ECEA /* StoreRegisterSuccessView.swift */; };
 		1B5D7E4B2C329AF200850B30 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1B5D7E482C329AF200850B30 /* Pretendard-Regular.otf */; };
 		1B5D7E4C2C329AF200850B30 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1B5D7E492C329AF200850B30 /* Pretendard-Bold.otf */; };
 		1B5D7E4D2C329AF200850B30 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1B5D7E4A2C329AF200850B30 /* Pretendard-Medium.otf */; };
@@ -57,6 +58,7 @@
 		1B303B782C3F6CFF00E1ECEA /* StoreMainInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreMainInfoView.swift; sourceTree = "<group>"; };
 		1B303B7A2C3F72DB00E1ECEA /* StoreDetailInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailInfoView.swift; sourceTree = "<group>"; };
 		1B303B7C2C3F77E100E1ECEA /* StoreInfoConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreInfoConfirmView.swift; sourceTree = "<group>"; };
+		1B303B7E2C3F801400E1ECEA /* StoreRegisterSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreRegisterSuccessView.swift; sourceTree = "<group>"; };
 		1B5D7E482C329AF200850B30 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		1B5D7E492C329AF200850B30 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		1B5D7E4A2C329AF200850B30 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				1B303B782C3F6CFF00E1ECEA /* StoreMainInfoView.swift */,
 				1B303B7A2C3F72DB00E1ECEA /* StoreDetailInfoView.swift */,
 				1B303B7C2C3F77E100E1ECEA /* StoreInfoConfirmView.swift */,
+				1B303B7E2C3F801400E1ECEA /* StoreRegisterSuccessView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 				1B303B752C3E4E9400E1ECEA /* CustomButton.swift in Sources */,
 				D2EE257D2C30A460000B8015 /* ContentView.swift in Sources */,
 				1B303B662C35107300E1ECEA /* UIScreen+Size.swift in Sources */,
+				1B303B7F2C3F801400E1ECEA /* StoreRegisterSuccessView.swift in Sources */,
 				1B303B702C3E49AD00E1ECEA /* StoreRegisterView.swift in Sources */,
 				1B303B6D2C389D4200E1ECEA /* UINavigationController+SwipeToDismiss.swift in Sources */,
 				1B5D7E802C34E0C000850B30 /* CustomNavigationBar.swift in Sources */,

@@ -174,60 +174,87 @@ extension MainView {
 
 extension MainView {
     var storeInfoView: some View { // TODO: 가게 정보를 받아와 func으로 교체
-        HStack(spacing: 19) {
-            VStack(alignment: .leading, spacing: 7) {
+        VStack(alignment: .leading, spacing: 7) {
+            HStack(spacing: 8) {
                 Text("전화번호")
                     .font(.pretendard(.regular, size: 14))
                     .foregroundStyle(Color.neutral500)
-                
-                Text("운영시간")
-                    .font(.pretendard(.regular, size: 14))
-                    .foregroundStyle(Color.neutral500)
-                
-                Text("휴무일")
-                    .font(.pretendard(.regular, size: 14))
-                    .foregroundStyle(Color.neutral500)
-                
-                Text("주소정보")
-                    .font(.pretendard(.regular, size: 14))
-                    .foregroundStyle(Color.neutral500)
-                
-                Text("배달금액")
-                    .font(.pretendard(.regular, size: 14))
-                    .foregroundStyle(Color.neutral500)
-                
-                Text("기타 정보")
-                    .font(.pretendard(.regular, size: 14))
-                    .foregroundStyle(Color.neutral500)
-            }
+                    .frame(width: 64, alignment: .leading)
             
-            VStack(alignment: .leading, spacing: 7) {
                 Text("041-523-5849")
                     .font(.pretendard(.regular, size: 14))
                     .foregroundStyle(Color.neutral800)
+                
+                Spacer()
+            }
+            
+            HStack(spacing: 8) {
+                Text("운영시간")
+                    .font(.pretendard(.regular, size: 14))
+                    .foregroundStyle(Color.neutral500)
+                    .frame(width: 64, alignment: .leading)
                 
                 Text("16:00 ~ 00:00")
                     .font(.pretendard(.regular, size: 14))
                     .foregroundStyle(Color.neutral800)
                 
+                Spacer()
+            }
+            
+            HStack(alignment: .top, spacing: 8) {
+                Text("휴무일")
+                    .font(.pretendard(.regular, size: 14))
+                    .foregroundStyle(Color.neutral500)
+                    .frame(width: 64, alignment: .leading)
+                
                 Text("매주 화요일")
                     .font(.pretendard(.regular, size: 14))
                     .foregroundStyle(Color.neutral800)
                 
+                Spacer()
+            }
+            
+            HStack(spacing: 8) {
+                Text("주소정보")
+                    .font(.pretendard(.regular, size: 14))
+                    .foregroundStyle(Color.neutral500)
+                    .frame(width: 64, alignment: .leading)
+                
                 Text("천안시 동남구 총절로 880 가동 1층")
                     .font(.pretendard(.regular, size: 14))
                     .foregroundStyle(Color.neutral800)
+                    .lineLimit(1)
+                
+                Spacer()
+            }
+            
+            
+            HStack(spacing: 8) {
+                Text("배달금액")
+                    .font(.pretendard(.regular, size: 14))
+                    .foregroundStyle(Color.neutral500)
+                    .frame(width: 64, alignment: .leading)
                 
                 Text("0원")
                     .font(.pretendard(.regular, size: 14))
                     .foregroundStyle(Color.neutral800)
                 
-                Text("3대째 다져온 고집스러운 맛")
-                    .font(.pretendard(.regular, size: 14))
-                    .foregroundStyle(Color.neutral800)
+                Spacer()
             }
             
-            Spacer()
+            
+            HStack(alignment: .top, spacing: 8) {
+                Text("기타정보")
+                    .font(.pretendard(.regular, size: 14))
+                    .foregroundStyle(Color.neutral500)
+                    .frame(width: 64, alignment: .leading)
+                
+                Text("3대째 다져온 고집스러운 맛 3대째 다져온 고집스러운 맛 3대째 다져온 고집스러운 맛")
+                    .font(.pretendard(.regular, size: 14))
+                    .foregroundStyle(Color.neutral800)
+                
+                Spacer()
+            }
         }
     }
     
