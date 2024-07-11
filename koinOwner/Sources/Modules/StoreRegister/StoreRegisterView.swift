@@ -38,7 +38,7 @@ struct StoreRegisterView: View {
             Group {
                 switch currentStep {
                 case 1: CategorySelectView(currentStep: $currentStep)
-                case 2: Text("2. 메인 정보 입력")
+                case 2: StoreMainInfoView(currentStep: $currentStep)
                 case 3: Text("3. 세부 정보 입력")
                 case 4: Text("2. 가게 정보 확인")
                 default: EmptyView()
