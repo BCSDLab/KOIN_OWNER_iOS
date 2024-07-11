@@ -78,6 +78,7 @@ struct StoreMainInfoView: View {
                 } label: {
                     Text("이전")
                 }
+                .frame(width: UIScreen.screenWidth / 4)
                 
                 CustomButton {
                     withAnimation {
