@@ -11,7 +11,7 @@ import SwiftUI
 struct KoinOwnerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ShopRegisterView(registerType: .management)
         }
     }
 }

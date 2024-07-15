@@ -1,5 +1,5 @@
 //
-//  StoreRegisterSuccessView.swift
+//  ShopRegisterSuccessView.swift
 //  koinOwner
 //
 //  Created by 정영준 on 7/11/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct StoreRegisterSuccessView: View {
+struct ShopRegisterSuccessView: View {
     var body: some View {
         VStack(spacing: 0) {
             Spacer()
@@ -42,5 +42,5 @@ struct StoreRegisterSuccessView: View {
 }
 
 #Preview {
-    StoreRegisterSuccessView()
+    ShopRegisterSuccessView()
 }

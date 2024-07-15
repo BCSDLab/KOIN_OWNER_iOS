@@ -1,5 +1,5 @@
 //
-//  StoreRegisterEntryView.swift
+//  ShopRegisterEntryView.swift
 //  koinOwner
 //
 //  Created by 정영준 on 7/10/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct StoreRegisterEntryView: View {
+struct ShopRegisterEntryView: View {
     var body: some View {
         VStack(spacing: 0) {
             Spacer()
@@ -45,5 +45,5 @@ struct StoreRegisterEntryView: View {
 }
 
 #Preview {
-    StoreRegisterEntryView()
+    ShopRegisterEntryView()
 }

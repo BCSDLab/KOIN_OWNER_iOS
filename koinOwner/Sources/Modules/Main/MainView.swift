@@ -28,7 +28,7 @@ struct MainView: View {
                 ScalingHeaderScrollView {
                     headerView
                 } content: {
-                    storeInfoView
+                    shopInfoView
                         .padding(.bottom, 14)
                         .padding(.horizontal, 24)
                     
@@ -173,7 +173,7 @@ extension MainView {
 }
 
 extension MainView {
-    var storeInfoView: some View { // TODO: 가게 정보를 받아와 func으로 교체
+    var shopInfoView: some View { // TODO: 가게 정보를 받아와 func으로 교체
         VStack(alignment: .leading, spacing: 7) {
             HStack(spacing: 8) {
                 Text("전화번호")

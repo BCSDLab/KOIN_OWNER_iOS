@@ -9,13 +9,13 @@ import SwiftUI
 
 struct CategorySelectView: View {
     @Binding var currentStep: Int
-    @State var currentCategory: StoreCategory = .none
+    @State var currentCategory: ShopCategory = .none
     
     var body: some View {
         VStack(spacing: 0) {
             HStack(spacing: 15) {
                 ForEach(1..<6) { index in
-                    categoryButton(StoreCategory(rawValue: index) ?? .chicken, isSelected: currentCategory == StoreCategory(rawValue: index) ?? .chicken)
+                    categoryButton(ShopCategory(rawValue: index) ?? .chicken, isSelected: currentCategory == ShopCategory(rawValue: index) ?? .chicken)
                 }
             }
            
@@ -23,7 +23,7 @@ struct CategorySelectView: View {
             
             HStack(spacing: 15) {
                 ForEach(6..<10) { index in
-                    categoryButton(StoreCategory(rawValue: index) ?? .chicken, isSelected: currentCategory == StoreCategory(rawValue: index) ?? .chicken)
+                    categoryButton(ShopCategory(rawValue: index) ?? .chicken, isSelected: currentCategory == ShopCategory(rawValue: index) ?? .chicken)
                 }
             }
             
@@ -44,7 +44,7 @@ struct CategorySelectView: View {
 }
 
 extension CategorySelectView {
-    func categoryButton(_ category: StoreCategory, isSelected: Bool) -> some View {
+    func categoryButton(_ category: ShopCategory, isSelected: Bool) -> some View {
         Button {
             withAnimation {
                 currentCategory = category
@@ -72,7 +72,7 @@ extension CategorySelectView {
     }
 }
 
-enum StoreCategory: Int, CaseIterable {
+enum ShopCategory: Int, CaseIterable {
     case none
     case chicken
     case pizza

@@ -1,5 +1,5 @@
 //
-//  StoreMainInfoView.swift
+//  ShopMainInfoView.swift
 //  koinOwner
 //
 //  Created by 정영준 on 7/11/24.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct StoreMainInfoView: View {
+struct ShopMainInfoView: View {
     @Binding var currentStep: Int
-    @State var storeName: String = ""
+    @State var shopName: String = ""
     @State var address: String = ""
     
     var body: some View {
@@ -42,7 +42,7 @@ struct StoreMainInfoView: View {
                     .padding(.bottom, 7)
                 
                 HStack(spacing: 16) {
-                    CustomTextField(placeholder: "가게명을 입력하세요.", text: $storeName)
+                    CustomTextField(placeholder: "가게명을 입력하세요.", text: $shopName)
                     
                     Button {
                         ()
@@ -94,5 +94,5 @@ struct StoreMainInfoView: View {
 }
 
 #Preview {
-    StoreMainInfoView(currentStep: .constant(2))
+    ShopMainInfoView(currentStep: .constant(2))
 }

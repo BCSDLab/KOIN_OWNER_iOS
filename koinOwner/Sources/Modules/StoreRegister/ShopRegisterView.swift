@@ -1,5 +1,5 @@
 //
-//  StoreRegisterView.swift
+//  ShopRegisterView.swift
 //  koinOwner
 //
 //  Created by 정영준 on 7/10/24.
@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct StoreRegisterView: View {
-    let registerType: StoreRegisterType
+struct ShopRegisterView: View {
+    let registerType: ShopRegisterType
     @State var currentStep: Int = 1
     
     var body: some View {
@@ -38,9 +38,9 @@ struct StoreRegisterView: View {
             Group {
                 switch currentStep {
                 case 1: CategorySelectView(currentStep: $currentStep)
-                case 2: StoreMainInfoView(currentStep: $currentStep)
-                case 3: StoreDetailInfoView(currentStep: $currentStep)
-                case 4: StoreInfoConfirmView(currentStep: $currentStep)
+                case 2: ShopMainInfoView(currentStep: $currentStep)
+                case 3: ShopDetailInfoView(currentStep: $currentStep)
+                case 4: ShopInfoConfirmView(currentStep: $currentStep)
                 default: EmptyView()
                 }
             }
@@ -49,7 +49,7 @@ struct StoreRegisterView: View {
     }
 }
 
-enum StoreRegisterType {
+enum ShopRegisterType {
     case register
     case management
     
@@ -64,5 +64,5 @@ enum StoreRegisterType {
 }
 
 #Preview {
-    StoreRegisterView(registerType: .management)
+    ShopRegisterView(registerType: .management)
 }

@@ -1,5 +1,5 @@
 //
-//  StoreDetailInfoView.swift
+//  ShopDetailInfoView.swift
 //  koinOwner
 //
 //  Created by 정영준 on 7/11/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct StoreDetailInfoView: View {
+struct ShopDetailInfoView: View {
     @Binding var currentStep: Int
     @State var phoneNumber: String = ""
     @State var delivery: String = ""
@@ -145,5 +145,5 @@ struct StoreDetailInfoView: View {
 }
 
 #Preview {
-    StoreDetailInfoView(currentStep: .constant(3))
+    ShopDetailInfoView(currentStep: .constant(3))
 }

@@ -1,5 +1,5 @@
 //
-//  StoreInfoConfirmView.swift
+//  ShopInfoConfirmView.swift
 //  koinOwner
 //
 //  Created by 정영준 on 7/11/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct StoreInfoConfirmView: View {
+struct ShopInfoConfirmView: View {
     @Binding var currentStep: Int
     
     var body: some View {
@@ -136,7 +136,7 @@ struct StoreInfoConfirmView: View {
     }
 }
 
-extension StoreInfoConfirmView {
+extension ShopInfoConfirmView {
     func availableOptionView(_ option: String) -> some View { // TODO: 가정 정보를 받아와서 param 변경
         Text("# \(option) 가능")
             .font(.pretendard(.regular, size: 12))
@@ -158,5 +158,5 @@ extension StoreInfoConfirmView {
 }
 
 #Preview {
-    StoreInfoConfirmView(currentStep: .constant(4))
+    ShopInfoConfirmView(currentStep: .constant(4))
 }
