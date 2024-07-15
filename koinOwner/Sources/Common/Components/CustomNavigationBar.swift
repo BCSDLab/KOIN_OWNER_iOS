@@ -11,10 +11,11 @@ struct CustomNavigationbarViewModifier<ButtonContent: View>: ViewModifier {
     let title: String
     let button: ButtonContent
     let showBackButton: Bool
+    let isColored: Bool
     
     func body(content: Content) -> some View {
         VStack(spacing: 0) {
-            BaseNavigationBar(title, button: button, showBackButton: showBackButton)
+            CustomNavigationBar(title: title, button: button, showBackButton: showBackButton, isColored: isColored)
                 .ignoresSafeArea(.keyboard)
             
             content
@@ -42,8 +43,8 @@ struct MainNavigationbarViewModifier: ViewModifier {
 }
 
 extension View {
-    func customNavigationBar<Content: View>(_ title: String = "", button: Content = EmptyView(), showBackButton: Bool = false) -> some View {
-        self.modifier(CustomNavigationbarViewModifier(title: title, button: button, showBackButton: showBackButton))
+    func customNavigationBar<Content: View>(_ title: String = "", button: Content = EmptyView(), showBackButton: Bool = false, isColored: Bool = true) -> some View {
+        self.modifier(CustomNavigationbarViewModifier(title: title, button: button, showBackButton: showBackButton, isColored: isColored))
     }
 
     func mainNavigationBar() -> some View {
@@ -51,16 +52,11 @@ extension View {
     }
 }
 
-struct BaseNavigationBar<Content: View>: View {
+struct CustomNavigationBar<Content: View>: View {
     let title: String
     let button: Content
     let showBackButton: Bool
-
-    init(_ title: String = "", button: Content, showBackButton: Bool) {
-        self.title = title
-        self.button = button
-        self.showBackButton = showBackButton
-    }
+    let isColored: Bool
 
     var body: some View {
         HStack(spacing: 0) {
@@ -70,14 +66,14 @@ struct BaseNavigationBar<Content: View>: View {
 
                     Text(title)
                         .font(.pretendard(.medium, size: 18))
-                        .foregroundStyle(Color.neutral0)
+                        .foregroundStyle(isColored ? Color.neutral0 : Color.neutral800)
                         .lineLimit(1)
                     
                     Spacer()
                 }
                 HStack(spacing: 0) {
                     if showBackButton {
-                        BackButton()
+                        BackButton(isColored: isColored)
                     }
                 
                     Spacer()
@@ -88,7 +84,7 @@ struct BaseNavigationBar<Content: View>: View {
             }
         }
         .frame(height: 55)
-        .background(Color.main500)
+        .background(isColored ? Color.main500 : Color.neutral0)
     }
 }
 
@@ -126,13 +122,14 @@ struct MainNavigationBar: View {
 }
 
 struct BackButton: View {
+    let isColored: Bool
     @Environment(\.dismiss) var dismiss
 
     var body: some View {
         Button {
             dismiss()
         } label: {
-            Image(systemName: "chevron.left") //TODO: 이미지 넣어야함
+            Image(isColored ? .icnChevronBackWhite : .icnChevronBackBlack)
                 .resizable()
                 .scaledToFit()
                 .frame(width: 24, height: 24)
@@ -141,5 +138,5 @@ struct BackButton: View {
 }
 
 #Preview {
-    MainNavigationBar()
+    CustomNavigationBar(title: "테스트", button: EmptyView(), showBackButton: true, isColored: false)
 }
