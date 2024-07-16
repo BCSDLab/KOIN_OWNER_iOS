@@ -32,11 +32,11 @@
 		D229EBC42C33A7C7004D54F9 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = D229EBC32C33A7C7004D54F9 /* .swiftlint.yml */; };
 		D22E63892C465CCA00A2139F /* RegisterFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22E63882C465CCA00A2139F /* RegisterFeature.swift */; };
 		D22E638F2C4665F400A2139F /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = D22E638E2C4665F400A2139F /* ComposableArchitecture */; };
-		D22E63992C46ED2B00A2139F /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = D22E63982C46ED2B00A2139F /* .gitkeep */; };
-		D22E639B2C46ED4600A2139F /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = D22E639A2C46ED4600A2139F /* .gitkeep */; };
-		D22E639F2C46ED8B00A2139F /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = D22E639E2C46ED8B00A2139F /* .gitkeep */; };
-		D22E63A32C46EDB200A2139F /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = D22E63A22C46EDB200A2139F /* .gitkeep */; };
-		D22E63A52C46EDF200A2139F /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = D22E63A42C46EDF200A2139F /* .gitkeep */; };
+		D22E63992C46ED2B00A2139F /* exampleNetwork in Resources */ = {isa = PBXBuildFile; fileRef = D22E63982C46ED2B00A2139F /* exampleNetwork */; };
+		D22E639B2C46ED4600A2139F /* exampleKeyChain in Resources */ = {isa = PBXBuildFile; fileRef = D22E639A2C46ED4600A2139F /* exampleKeyChain */; };
+		D22E639F2C46ED8B00A2139F /* exampleClient in Resources */ = {isa = PBXBuildFile; fileRef = D22E639E2C46ED8B00A2139F /* exampleClient */; };
+		D22E63A32C46EDB200A2139F /* exampleDTO in Resources */ = {isa = PBXBuildFile; fileRef = D22E63A22C46EDB200A2139F /* exampleDTO */; };
+		D22E63A52C46EDF200A2139F /* exampleUserDefaults in Resources */ = {isa = PBXBuildFile; fileRef = D22E63A42C46EDF200A2139F /* exampleUserDefaults */; };
 		D23944772C3BBE9800048F45 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23944762C3BBE9800048F45 /* RegisterView.swift */; };
 		D239449A2C3CC63800048F45 /* FindPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23944992C3CC63800048F45 /* FindPasswordView.swift */; };
 		D239449C2C3CC6D400048F45 /* AccountVerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D239449B2C3CC6D400048F45 /* AccountVerificationView.swift */; };
@@ -76,11 +76,11 @@
 		1B5D7E7F2C34E0C000850B30 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		D229EBC32C33A7C7004D54F9 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		D22E63882C465CCA00A2139F /* RegisterFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFeature.swift; sourceTree = "<group>"; };
-		D22E63982C46ED2B00A2139F /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		D22E639A2C46ED4600A2139F /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		D22E639E2C46ED8B00A2139F /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		D22E63A22C46EDB200A2139F /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		D22E63A42C46EDF200A2139F /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		D22E63982C46ED2B00A2139F /* exampleNetwork */ = {isa = PBXFileReference; lastKnownFileType = text; path = exampleNetwork; sourceTree = "<group>"; };
+		D22E639A2C46ED4600A2139F /* exampleKeyChain */ = {isa = PBXFileReference; lastKnownFileType = text; path = exampleKeyChain; sourceTree = "<group>"; };
+		D22E639E2C46ED8B00A2139F /* exampleClient */ = {isa = PBXFileReference; lastKnownFileType = text; path = exampleClient; sourceTree = "<group>"; };
+		D22E63A22C46EDB200A2139F /* exampleDTO */ = {isa = PBXFileReference; lastKnownFileType = text; path = exampleDTO; sourceTree = "<group>"; };
+		D22E63A42C46EDF200A2139F /* exampleUserDefaults */ = {isa = PBXFileReference; lastKnownFileType = text; path = exampleUserDefaults; sourceTree = "<group>"; };
 		D23944762C3BBE9800048F45 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		D23944992C3CC63800048F45 /* FindPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPasswordView.swift; sourceTree = "<group>"; };
 		D239449B2C3CC6D400048F45 /* AccountVerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVerificationView.swift; sourceTree = "<group>"; };
@@ -217,7 +217,7 @@
 		D22E63912C46EC8A00A2139F /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				D22E63982C46ED2B00A2139F /* .gitkeep */,
+				D22E63982C46ED2B00A2139F /* exampleNetwork */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -234,7 +234,7 @@
 		D22E63932C46ECC800A2139F /* Client */ = {
 			isa = PBXGroup;
 			children = (
-				D22E639E2C46ED8B00A2139F /* .gitkeep */,
+				D22E639E2C46ED8B00A2139F /* exampleClient */,
 			);
 			path = Client;
 			sourceTree = "<group>";
@@ -242,7 +242,7 @@
 		D22E63942C46ECDB00A2139F /* KeyChain */ = {
 			isa = PBXGroup;
 			children = (
-				D22E639A2C46ED4600A2139F /* .gitkeep */,
+				D22E639A2C46ED4600A2139F /* exampleKeyChain */,
 			);
 			path = KeyChain;
 			sourceTree = "<group>";
@@ -250,7 +250,7 @@
 		D22E63952C46ECED00A2139F /* UserDefaults */ = {
 			isa = PBXGroup;
 			children = (
-				D22E63A42C46EDF200A2139F /* .gitkeep */,
+				D22E63A42C46EDF200A2139F /* exampleUserDefaults */,
 			);
 			path = UserDefaults;
 			sourceTree = "<group>";
@@ -266,7 +266,7 @@
 		D22E63A12C46EDA100A2139F /* Register */ = {
 			isa = PBXGroup;
 			children = (
-				D22E63A22C46EDB200A2139F /* .gitkeep */,
+				D22E63A22C46EDB200A2139F /* exampleDTO */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -441,16 +441,16 @@
 			files = (
 				D229EBC42C33A7C7004D54F9 /* .swiftlint.yml in Resources */,
 				1B5D7E4C2C329AF200850B30 /* Pretendard-Bold.otf in Resources */,
-				D22E639F2C46ED8B00A2139F /* .gitkeep in Resources */,
-				D22E63A52C46EDF200A2139F /* .gitkeep in Resources */,
-				D22E63A32C46EDB200A2139F /* .gitkeep in Resources */,
+				D22E639F2C46ED8B00A2139F /* exampleClient in Resources */,
+				D22E63A52C46EDF200A2139F /* exampleUserDefaults in Resources */,
+				D22E63A32C46EDB200A2139F /* exampleDTO in Resources */,
 				1B5D7E4B2C329AF200850B30 /* Pretendard-Regular.otf in Resources */,
-				D22E639B2C46ED4600A2139F /* .gitkeep in Resources */,
+				D22E639B2C46ED4600A2139F /* exampleKeyChain in Resources */,
 				D2EE25822C30A463000B8015 /* Preview Assets.xcassets in Resources */,
 				D2EE257F2C30A463000B8015 /* Images.xcassets in Resources */,
 				1B5D7E4D2C329AF200850B30 /* Pretendard-Medium.otf in Resources */,
 				1B5D7E502C329B2D00850B30 /* Colors.xcassets in Resources */,
-				D22E63992C46ED2B00A2139F /* .gitkeep in Resources */,
+				D22E63992C46ED2B00A2139F /* exampleNetwork in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
