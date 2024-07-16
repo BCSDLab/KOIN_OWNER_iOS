@@ -32,7 +32,9 @@ struct RegisterView: View {
                     .frame(height: 8).padding(.top, 8)
                 switch currentStep {
                 case 1:
-                    PolicyAgreementView()
+                    PolicyAgreementView(store: .init(initialState: .init(), reducer: {
+                        PolicyAgreementFeature()._printChanges()
+                    }))
                 case 2:
                     RegistrationFormView()
                 default:
