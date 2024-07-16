@@ -280,9 +280,9 @@
 		D22E63A62C4707C500A2139F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D22E63A92C4707E900A2139F /* BusinessVerification */,
-				D22E63A82C4707DC00A2139F /* RegistrationForm */,
 				D22E63A72C4707CF00A2139F /* PolicyAgreement */,
+				D22E63A82C4707DC00A2139F /* RegistrationForm */,
+				D22E63A92C4707E900A2139F /* BusinessVerification */,
 			);
 			path = Views;
 			sourceTree = "<group>";

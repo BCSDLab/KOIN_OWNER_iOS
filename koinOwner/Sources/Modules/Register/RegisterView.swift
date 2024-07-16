@@ -36,7 +36,9 @@ struct RegisterView: View {
                         PolicyAgreementFeature()._printChanges()
                     }))
                 case 2:
-                    RegistrationFormView()
+                    RegistrationFormView(store: .init(initialState: .init(), reducer: {
+                        RegistrationFormFeature()._printChanges()
+                    }))
                 default:
                     BusinessVerificationView()
                 }
