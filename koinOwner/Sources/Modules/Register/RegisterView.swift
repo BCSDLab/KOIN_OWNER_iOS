@@ -40,7 +40,9 @@ struct RegisterView: View {
                         RegistrationFormFeature()._printChanges()
                     }))
                 default:
-                    BusinessVerificationView()
+                    BusinessVerificationView(store: .init(initialState: .init(), reducer: {
+                        BusinessVerificationFeature()._printChanges()
+                    }))
                 }
                 Spacer()
                 Button(action: {
