@@ -30,7 +30,13 @@
 		1B5D7E7D2C34DF3000850B30 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5D7E7C2C34DF3000850B30 /* MainView.swift */; };
 		1B5D7E802C34E0C000850B30 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5D7E7F2C34E0C000850B30 /* CustomNavigationBar.swift */; };
 		D229EBC42C33A7C7004D54F9 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = D229EBC32C33A7C7004D54F9 /* .swiftlint.yml */; };
-		D22E63872C46176600A2139F /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = D22E63862C46176600A2139F /* ComposableArchitecture */; };
+		D22E63892C465CCA00A2139F /* RegisterFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22E63882C465CCA00A2139F /* RegisterFeature.swift */; };
+		D22E638F2C4665F400A2139F /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = D22E638E2C4665F400A2139F /* ComposableArchitecture */; };
+		D22E63992C46ED2B00A2139F /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = D22E63982C46ED2B00A2139F /* .gitkeep */; };
+		D22E639B2C46ED4600A2139F /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = D22E639A2C46ED4600A2139F /* .gitkeep */; };
+		D22E639F2C46ED8B00A2139F /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = D22E639E2C46ED8B00A2139F /* .gitkeep */; };
+		D22E63A32C46EDB200A2139F /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = D22E63A22C46EDB200A2139F /* .gitkeep */; };
+		D22E63A52C46EDF200A2139F /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = D22E63A42C46EDF200A2139F /* .gitkeep */; };
 		D23944772C3BBE9800048F45 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23944762C3BBE9800048F45 /* RegisterView.swift */; };
 		D239449A2C3CC63800048F45 /* FindPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23944992C3CC63800048F45 /* FindPasswordView.swift */; };
 		D239449C2C3CC6D400048F45 /* AccountVerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D239449B2C3CC6D400048F45 /* AccountVerificationView.swift */; };
@@ -69,6 +75,12 @@
 		1B5D7E7C2C34DF3000850B30 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		1B5D7E7F2C34E0C000850B30 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		D229EBC32C33A7C7004D54F9 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		D22E63882C465CCA00A2139F /* RegisterFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFeature.swift; sourceTree = "<group>"; };
+		D22E63982C46ED2B00A2139F /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		D22E639A2C46ED4600A2139F /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		D22E639E2C46ED8B00A2139F /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		D22E63A22C46EDB200A2139F /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		D22E63A42C46EDF200A2139F /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		D23944762C3BBE9800048F45 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		D23944992C3CC63800048F45 /* FindPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPasswordView.swift; sourceTree = "<group>"; };
 		D239449B2C3CC6D400048F45 /* AccountVerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVerificationView.swift; sourceTree = "<group>"; };
@@ -93,7 +105,7 @@
 			files = (
 				1B303B5F2C34F20C00E1ECEA /* Nuke in Frameworks */,
 				1B303B612C34F20C00E1ECEA /* NukeUI in Frameworks */,
-				D22E63872C46176600A2139F /* ComposableArchitecture in Frameworks */,
+				D22E638F2C4665F400A2139F /* ComposableArchitecture in Frameworks */,
 				1B303B642C3503BC00E1ECEA /* ScalingHeaderScrollView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -191,6 +203,74 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		D22E63902C46EC8200A2139F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D22E63A02C46ED9200A2139F /* DTO */,
+				D22E63932C46ECC800A2139F /* Client */,
+				D22E63922C46ECA900A2139F /* Storage */,
+				D22E63912C46EC8A00A2139F /* Network */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		D22E63912C46EC8A00A2139F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D22E63982C46ED2B00A2139F /* .gitkeep */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		D22E63922C46ECA900A2139F /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				D22E63952C46ECED00A2139F /* UserDefaults */,
+				D22E63942C46ECDB00A2139F /* KeyChain */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		D22E63932C46ECC800A2139F /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				D22E639E2C46ED8B00A2139F /* .gitkeep */,
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
+		D22E63942C46ECDB00A2139F /* KeyChain */ = {
+			isa = PBXGroup;
+			children = (
+				D22E639A2C46ED4600A2139F /* .gitkeep */,
+			);
+			path = KeyChain;
+			sourceTree = "<group>";
+		};
+		D22E63952C46ECED00A2139F /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				D22E63A42C46EDF200A2139F /* .gitkeep */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		D22E63A02C46ED9200A2139F /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				D22E63A12C46EDA100A2139F /* Register */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		D22E63A12C46EDA100A2139F /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				D22E63A22C46EDB200A2139F /* .gitkeep */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
 		D23944922C3CC56300048F45 /* FindPassword */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +288,7 @@
 				D28E2F142C369CC2004A64D5 /* RegistrationFormView.swift */,
 				D28E2F182C381BE6004A64D5 /* BusinessVerificationView.swift */,
 				D23944762C3BBE9800048F45 /* RegisterView.swift */,
+				D22E63882C465CCA00A2139F /* RegisterFeature.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -269,6 +350,7 @@
 		D2EE25892C3258EB000B8015 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				D22E63902C46EC8200A2139F /* Data */,
 				D2E5F22D2C3694D9000B92CB /* Model */,
 				1B5D7E512C32A1EF00850B30 /* Common */,
 				D2EE258A2C325902000B8015 /* Modules */,
@@ -308,7 +390,7 @@
 				1B303B5E2C34F20C00E1ECEA /* Nuke */,
 				1B303B602C34F20C00E1ECEA /* NukeUI */,
 				1B303B632C3503BC00E1ECEA /* ScalingHeaderScrollView */,
-				D22E63862C46176600A2139F /* ComposableArchitecture */,
+				D22E638E2C4665F400A2139F /* ComposableArchitecture */,
 			);
 			productName = koinOwner;
 			productReference = D2EE25772C30A460000B8015 /* koinOwner.app */;
@@ -341,7 +423,7 @@
 			packageReferences = (
 				1B303B5D2C34F20C00E1ECEA /* XCRemoteSwiftPackageReference "Nuke" */,
 				1B303B622C3503BC00E1ECEA /* XCRemoteSwiftPackageReference "ScalingHeaderScrollView" */,
-				D22E63852C46176600A2139F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				D22E638D2C4665F400A2139F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 			);
 			productRefGroup = D2EE25782C30A460000B8015 /* Products */;
 			projectDirPath = "";
@@ -359,11 +441,16 @@
 			files = (
 				D229EBC42C33A7C7004D54F9 /* .swiftlint.yml in Resources */,
 				1B5D7E4C2C329AF200850B30 /* Pretendard-Bold.otf in Resources */,
+				D22E639F2C46ED8B00A2139F /* .gitkeep in Resources */,
+				D22E63A52C46EDF200A2139F /* .gitkeep in Resources */,
+				D22E63A32C46EDB200A2139F /* .gitkeep in Resources */,
 				1B5D7E4B2C329AF200850B30 /* Pretendard-Regular.otf in Resources */,
+				D22E639B2C46ED4600A2139F /* .gitkeep in Resources */,
 				D2EE25822C30A463000B8015 /* Preview Assets.xcassets in Resources */,
 				D2EE257F2C30A463000B8015 /* Images.xcassets in Resources */,
 				1B5D7E4D2C329AF200850B30 /* Pretendard-Medium.otf in Resources */,
 				1B5D7E502C329B2D00850B30 /* Colors.xcassets in Resources */,
+				D22E63992C46ED2B00A2139F /* .gitkeep in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +505,7 @@
 				1B303B662C35107300E1ECEA /* UIScreen+Size.swift in Sources */,
 				1B303B7D2C3F77E100E1ECEA /* ShopInfoConfirmView.swift in Sources */,
 				1B5D7E7D2C34DF3000850B30 /* MainView.swift in Sources */,
+				D22E63892C465CCA00A2139F /* RegisterFeature.swift in Sources */,
 				1B5D7E542C32A25A00850B30 /* Font+Custom.swift in Sources */,
 				1B303B6B2C3667DC00E1ECEA /* MainView+EventTab.swift in Sources */,
 				D239449C2C3CC6D400048F45 /* AccountVerificationView.swift in Sources */,
@@ -653,11 +741,11 @@
 				minimumVersion = 1.1.3;
 			};
 		};
-		D22E63852C46176600A2139F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+		D22E638D2C4665F400A2139F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
 			requirement = {
-				kind = upToNextMajorVersion;
+				kind = upToNextMinorVersion;
 				minimumVersion = 1.11.2;
 			};
 		};
@@ -679,9 +767,9 @@
 			package = 1B303B622C3503BC00E1ECEA /* XCRemoteSwiftPackageReference "ScalingHeaderScrollView" */;
 			productName = ScalingHeaderScrollView;
 		};
-		D22E63862C46176600A2139F /* ComposableArchitecture */ = {
+		D22E638E2C4665F400A2139F /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D22E63852C46176600A2139F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			package = D22E638D2C4665F400A2139F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
 		};
 /* End XCSwiftPackageProductDependency section */
