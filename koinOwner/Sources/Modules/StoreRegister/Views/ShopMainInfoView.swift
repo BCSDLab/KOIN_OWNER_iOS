@@ -25,8 +25,7 @@ struct ShopMainInfoView: View {
                         .padding(.bottom, 8)
                     
                     Text("영역을 선택하여 이미지를 추가하세요.")
-                        .font(.pretendard(.medium, size: 14))
-                        .foregroundStyle(Color.neutral500)
+                        .mediumText(14, color: Color.neutral500)
                 }
                 .padding(.vertical, 54)
                 .padding(.horizontal, 38)
@@ -36,8 +35,7 @@ struct ShopMainInfoView: View {
             
             VStack(alignment: .leading, spacing: 0) {
                 Text("가게명")
-                    .font(.pretendard(.medium, size: 14))
-                    .foregroundStyle(Color(.neutral800))
+                    .textFieldTitle()
                     .padding(.leading, 8)
                     .padding(.bottom, 7)
                 
@@ -48,8 +46,7 @@ struct ShopMainInfoView: View {
                         ()
                     } label: {
                         Text("가게 검색")
-                            .font(.pretendard(.medium, size: 15))
-                            .foregroundStyle(Color.neutral0)
+                            .mediumText(15, color: Color.neutral0)
                             .frame(height: 46)
                             .padding(.horizontal, 16)
                             .background(Color.main500)
@@ -59,8 +56,7 @@ struct ShopMainInfoView: View {
                 .padding(.bottom, 24)
                 
                 Text("주소정보")
-                    .font(.pretendard(.medium, size: 14))
-                    .foregroundStyle(Color(.neutral800))
+                    .textFieldTitle()
                     .padding(.leading, 8)
                     .padding(.bottom, 7)
                 

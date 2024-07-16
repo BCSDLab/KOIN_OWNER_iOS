@@ -19,13 +19,11 @@ struct ShopRegisterEntryView: View {
                 .padding(.bottom, 38)
             
             Text("가게 정보 기입")
-                .font(.pretendard(.bold, size: 24))
-                .foregroundStyle(Color.main500)
+                .boldText(24, color: Color.main500)
                 .padding(.bottom, 20)
 
             Text("가게의 다양한 정보를 입력 및 수정하여 학생들에게 최신 가게 정보를 알려주세요.")
-                .font(.pretendard(.regular, size: 16))
-                .foregroundStyle(Color.neutral500)
+                .regularText(16, color: Color.neutral500)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 53)
                 .padding(.bottom, 55)

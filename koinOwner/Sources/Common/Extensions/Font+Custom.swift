@@ -15,6 +15,6 @@ extension Font {
     }
 
     static func pretendard(_ type: Pretendard, size: CGFloat) -> Font {
-        return .custom(type.rawValue, size: size)     // ex) .font(.pretendard(.bold, size: 19))
+        return .custom(type.rawValue, size: size)
     }
 }

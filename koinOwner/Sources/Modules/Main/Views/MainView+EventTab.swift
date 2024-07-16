@@ -76,15 +76,13 @@ extension MainView {
                     VStack(alignment: .leading, spacing: 0) {
                         HStack(spacing: 0) {
                             Text(event.title)
-                                .font(.pretendard(.medium, size: 16))
-                                .foregroundStyle(Color.neutral800)
-                            
+                                .mediumText(16)
+            
                             Spacer()
                             
                             HStack(spacing: 4) {
                                 Text("전체보기")
-                                    .font(.pretendard(.medium, size: 12))
-                                    .foregroundStyle(Color.neutral500)
+                                    .mediumText(12, color: Color.neutral500)
                                 
                                 Image(isCurrentEvent ? .icnChevronUp : .icnChevronDown)
                                     .resizable()
@@ -95,15 +93,13 @@ extension MainView {
                         .padding(.bottom, 8)
                         
                         Text(event.content)
-                            .font(.pretendard(.regular, size: 12))
-                            .foregroundStyle(Color.neutral500)
+                            .regularText(12, color: Color.neutral500)
                             .lineLimit(currentEvent == event.id ? .none : 2)
                             .multilineTextAlignment(.leading)
                             .padding(.bottom, 6)
 
                         Text("\(event.startDate) - \(event.endDate)")
-                            .font(.pretendard(.regular, size: 10))
-                            .foregroundStyle(Color.neutral500)
+                            .regularText(10, color: Color.neutral500)
                     }
                 }
             }

@@ -20,14 +20,13 @@ struct RegisterView: View {
                         default: Text("3. 사업자 인증")
                         }
                     }
-                    .font(.pretendard(.medium, size: 16))
-                    .foregroundStyle(Color.main500)
+                  
                     
                     Spacer()
                     Text("\(currentStep) / 3")
-                        .font(.pretendard(.medium, size: 16))
-                        .foregroundStyle(Color.main500)
                 }
+                .progressBarTitle()
+                
                 CustomProgressBar(progress: Double(currentStep) / 3.0)
                     .frame(height: 8).padding(.top, 8)
                 switch currentStep {
@@ -43,8 +42,7 @@ struct RegisterView: View {
                     currentStep += 1
                 }) {
                     Text("다음")
-                        .font(.pretendard(.medium, size: 15))
-                        .foregroundStyle(Color.neutral600)
+                        .mediumText(15, color: Color.neutral600)
                         .frame(maxWidth: .infinity, minHeight: 48)
                         .background(Color.neutral300)
                         .clipShape(RoundedRectangle(cornerRadius: 4))

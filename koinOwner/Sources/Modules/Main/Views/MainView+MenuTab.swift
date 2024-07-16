@@ -53,12 +53,10 @@ extension MainView {
             
             VStack(alignment: .leading, spacing: 2) {
                 Text(menu.name)
-                    .font(.pretendard(.medium, size: 16))
-                    .foregroundStyle(Color.neutral800)
+                    .mediumText(16)
                     .lineLimit(2)
                 Text("\(menu.price)원")
-                    .font(.pretendard(.regular, size: 14))
-                    .foregroundStyle(Color.main500)
+                    .regularText(14, color: Color.main500)
             }
             
             Spacer()
@@ -78,8 +76,7 @@ extension MainView {
                         .frame(width: 24, height: 24)
                     
                     Text(type.name)
-                        .font(.pretendard(.medium, size: 18))
-                        .foregroundStyle(Color.main400)
+                        .mediumText(18, color: Color.main400)
                 }
                 .padding(.vertical, 4)
                 .padding(.horizontal, 9)
@@ -115,8 +112,7 @@ extension MainView {
             }
         } label: {
             Text(name)
-                .font(.pretendard(.regular, size: 12))
-                .foregroundStyle(currentMenu == value ? Color.neutral0 : Color.neutral500)
+                .regularText(12, color: currentMenu == value ? Color.neutral0 : Color.neutral500)
                 .padding(.vertical, 8)
                 .padding(.horizontal, 12)
                 .background(currentMenu == value ? Color.main500 : Color.neutral0)

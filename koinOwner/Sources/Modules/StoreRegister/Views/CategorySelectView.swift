@@ -64,8 +64,7 @@ extension CategorySelectView {
                     }
                 
                 Text(category.title)
-                    .font(.pretendard(.regular, size: 13))
-                    .foregroundStyle(isSelected ? Color.sub500 : Color.neutral800)
+                    .regularText(13, color: isSelected ? Color.sub500 : Color.neutral800)
                     .frame(width: 60)
             }
         }

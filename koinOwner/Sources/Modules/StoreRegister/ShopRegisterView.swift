@@ -26,8 +26,7 @@ struct ShopRegisterView: View {
                 
                 Text("\(currentStep) / 4")
             }
-            .font(.pretendard(.medium, size: 16))
-            .foregroundStyle(Color.main500)
+            .progressBarTitle()
             .padding(.horizontal, 24)
        
             CustomProgressBar(progress: Double(currentStep) / 4.0)

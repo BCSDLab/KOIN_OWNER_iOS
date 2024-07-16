@@ -65,8 +65,7 @@ struct CustomNavigationBar<Content: View>: View {
                     Spacer()
 
                     Text(title)
-                        .font(.pretendard(.medium, size: 18))
-                        .foregroundStyle(isColored ? Color.neutral0 : Color.neutral800)
+                        .mediumText(18, color: isColored ? Color.neutral0 : Color.neutral800)
                         .lineLimit(1)
                     
                     Spacer()
@@ -98,8 +97,7 @@ struct MainNavigationBar: View {
                     .frame(height: 30)
                 
                 Text("For Business")
-                    .font(.pretendard(.regular, size: 12))
-                    .foregroundStyle(Color.neutral0)
+                    .regularText(12, color: Color.neutral0)
             }
             
             Spacer()

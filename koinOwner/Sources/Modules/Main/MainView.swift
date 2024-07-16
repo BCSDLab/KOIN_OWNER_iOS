@@ -44,8 +44,7 @@ struct MainView: View {
                             .padding(.trailing, 4)
                         
                         Text("2024.03.09 업데이트")
-                            .font(.pretendard(.regular, size: 12))
-                            .foregroundStyle(Color.neutral400)
+                            .regularText(12, color: Color.neutral400)
                         
                         Spacer()
                     }
@@ -128,8 +127,7 @@ extension MainView {
                         .padding(.vertical, 8)
                     
                     Text("가게 관리하기")
-                        .font(.pretendard(.medium, size: 16))
-                        .foregroundStyle(Color.main500)
+                        .mediumText(16, color: Color.main500)
                     
                     Spacer()
                 }
@@ -142,7 +140,7 @@ extension MainView {
             
             HStack(spacing: 0) {
                 Text("가장 맛있는 족발") // MARK: 가게명
-                    .font(.pretendard(.bold, size: 20))
+                    .boldText(20)
                     .padding(.vertical, 14)
                       
                 Spacer()
@@ -177,81 +175,66 @@ extension MainView {
         VStack(alignment: .leading, spacing: 7) {
             HStack(spacing: 8) {
                 Text("전화번호")
-                    .font(.pretendard(.regular, size: 14))
-                    .foregroundStyle(Color.neutral500)
+                    .regularText(14, color: Color.neutral500)
                     .frame(width: 64, alignment: .leading)
             
                 Text("041-523-5849")
-                    .font(.pretendard(.regular, size: 14))
-                    .foregroundStyle(Color.neutral800)
+                    .regularText(14)
                 
                 Spacer()
             }
             
             HStack(spacing: 8) {
                 Text("운영시간")
-                    .font(.pretendard(.regular, size: 14))
-                    .foregroundStyle(Color.neutral500)
+                    .regularText(14, color: Color.neutral500)
                     .frame(width: 64, alignment: .leading)
                 
                 Text("16:00 ~ 00:00")
-                    .font(.pretendard(.regular, size: 14))
-                    .foregroundStyle(Color.neutral800)
+                    .regularText(14)
                 
                 Spacer()
             }
             
             HStack(alignment: .top, spacing: 8) {
                 Text("휴무일")
-                    .font(.pretendard(.regular, size: 14))
-                    .foregroundStyle(Color.neutral500)
+                    .regularText(14, color: Color.neutral500)
                     .frame(width: 64, alignment: .leading)
                 
                 Text("매주 화요일")
-                    .font(.pretendard(.regular, size: 14))
-                    .foregroundStyle(Color.neutral800)
+                    .regularText(14)
                 
                 Spacer()
             }
             
-            HStack(spacing: 8) {
+            HStack(alignment: .top, spacing: 8) {
                 Text("주소정보")
-                    .font(.pretendard(.regular, size: 14))
-                    .foregroundStyle(Color.neutral500)
+                    .regularText(14, color: Color.neutral500)
                     .frame(width: 64, alignment: .leading)
                 
                 Text("천안시 동남구 총절로 880 가동 1층")
-                    .font(.pretendard(.regular, size: 14))
-                    .foregroundStyle(Color.neutral800)
-                    .lineLimit(1)
+                    .regularText(14)
                 
                 Spacer()
             }
-            
             
             HStack(spacing: 8) {
                 Text("배달금액")
-                    .font(.pretendard(.regular, size: 14))
-                    .foregroundStyle(Color.neutral500)
+                    .regularText(14, color: Color.neutral500)
                     .frame(width: 64, alignment: .leading)
                 
                 Text("0원")
-                    .font(.pretendard(.regular, size: 14))
-                    .foregroundStyle(Color.neutral800)
+                    .regularText(14)
                 
                 Spacer()
             }
             
-            
             HStack(alignment: .top, spacing: 8) {
                 Text("기타정보")
-                    .font(.pretendard(.regular, size: 14))
-                    .foregroundStyle(Color.neutral500)
+                    .regularText(14, color: Color.neutral500)
                     .frame(width: 64, alignment: .leading)
                 
                 Text("3대째 다져온 고집스러운 맛 3대째 다져온 고집스러운 맛 3대째 다져온 고집스러운 맛")
-                    .font(.pretendard(.regular, size: 14))
-                    .foregroundStyle(Color.neutral800)
+                    .regularText(14)
                 
                 Spacer()
             }
@@ -260,8 +243,7 @@ extension MainView {
     
     func availableOptionView(_ option: String) -> some View { // TODO: 가정 정보를 받아와서 param 변경
         Text("# \(option) 가능")
-            .font(.pretendard(.regular, size: 12))
-            .foregroundStyle(Color.main300)
+            .regularText(12, color: Color.main300)
             .padding(.vertical, 5)
             .padding(.horizontal, 10)
             .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color.main300))
@@ -290,8 +272,7 @@ extension MainView {
                     }
                 } label: {
                     Text("메뉴")
-                        .font(.pretendard(.medium, size: 16))
-                        .foregroundStyle(currentTab == 0 ? Color.main500 : Color.neutral500)
+                        .mediumText(16, color: currentTab == 0 ? Color.main500 : Color.neutral500)
                         .padding(.vertical, 10)
                         .frame(width: UIScreen.screenWidth / 2)
                 }
@@ -305,8 +286,7 @@ extension MainView {
 //                    snapTo = .custom(286)
                 } label: {
                     Text("이벤트/공지")
-                        .font(.pretendard(.medium, size: 16))
-                        .foregroundStyle(currentTab == 1 ? Color.main500 : Color.neutral500)
+                        .mediumText(16, color: currentTab == 1 ? Color.main500 : Color.neutral500)
                         .padding(.vertical, 10)
                         .frame(width: UIScreen.screenWidth / 2)
                 }
@@ -367,8 +347,7 @@ extension MainView {
                             .frame(width: 16, height: 16)
                         
                         Text("전체")
-                            .font(.pretendard(.regular, size: 12))
-                            .foregroundStyle(Color.neutral500)
+                            .regularText(12, color: Color.neutral500)
                     }
                 }
 
@@ -384,8 +363,7 @@ extension MainView {
                             .frame(width: 16, height: 16)
                         
                         Text("수정")
-                            .font(.pretendard(.medium, size: 14))
-                            .foregroundStyle(Color.neutral500)
+                            .mediumText(14, color: Color.neutral500)
                     }
                     .padding(.vertical, 9)
                     .padding(.horizontal, 8)
@@ -401,8 +379,7 @@ extension MainView {
                             .frame(width: 16, height: 16)
                         
                         Text("삭제")
-                            .font(.pretendard(.medium, size: 14))
-                            .foregroundStyle(Color.neutral500)
+                            .mediumText(14, color: Color.neutral500)
                     }
                     .padding(.vertical, 9)
                     .padding(.horizontal, 8)
@@ -420,8 +397,7 @@ extension MainView {
                             .frame(width: 16, height: 16)
                         
                         Text("완료")
-                            .font(.pretendard(.medium, size: 14))
-                            .foregroundStyle(Color.neutral500)
+                            .mediumText(14, color: Color.neutral500)
                     }
                     .padding(.vertical, 9)
                     .padding(.horizontal, 8)
@@ -450,8 +426,7 @@ extension MainView {
                             .frame(width: 16, height: 16)
                         
                         Text("편집하기")
-                            .font(.pretendard(.medium, size: 14))
-                            .foregroundStyle(Color.neutral500)
+                            .mediumText(14, color: Color.neutral500)
 
                         Spacer()
                     }
@@ -474,8 +449,7 @@ extension MainView {
                             .frame(width: 16, height: 16)
                         
                         Text("추가하기")
-                            .font(.pretendard(.medium, size: 14))
-                            .foregroundStyle(Color.neutral500)
+                            .mediumText(14, color: Color.neutral500)
 
                         Spacer()
                     }

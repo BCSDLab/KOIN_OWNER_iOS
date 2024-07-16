@@ -19,8 +19,7 @@ struct ShopDetailInfoView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             Text("전화번호")
-                .font(.pretendard(.medium, size: 14))
-                .foregroundStyle(Color(.neutral800))
+                .textFieldTitle()
                 .padding(.leading, 8)
                 .padding(.bottom, 7)
             
@@ -28,8 +27,7 @@ struct ShopDetailInfoView: View {
                 .padding(.bottom, 24)
             
             Text("배달금액")
-                .font(.pretendard(.medium, size: 14))
-                .foregroundStyle(Color(.neutral800))
+                .textFieldTitle()
                 .padding(.leading, 8)
                 .padding(.bottom, 7)
             
@@ -37,35 +35,27 @@ struct ShopDetailInfoView: View {
                 .padding(.bottom, 24)
             
             Text("운영시간")
-                .font(.pretendard(.medium, size: 14))
-                .foregroundStyle(Color(.neutral800))
+                .textFieldTitle()
                 .padding(.leading, 8)
                 .padding(.bottom, 7)
             
             HStack(spacing: 16) {
                 Text("00:00 ~ 24:00")
-                    .font(.pretendard(.regular, size: 18))
-                    .foregroundStyle(Color.neutral500)
+                    .regularText(18, color: Color.neutral500)
                 
                 Spacer()
                 
-                Button {
+                CustomButton(action: {
                     ()
-                } label: {
+                }, label: {
                     Text("시간수정")
-                        .font(.pretendard(.medium, size: 15))
-                        .foregroundStyle(Color.neutral0)
-                        .frame(height: 46)
-                        .padding(.horizontal, 16)
-                        .background(Color.main500)
-                        .clipShape(RoundedRectangle(cornerRadius: 4))
-                }
+                }, width: 84, height: 46)
+                
             }
             .padding(.bottom, 24)
             
             Text("기타정보")
-                .font(.pretendard(.medium, size: 14))
-                .foregroundStyle(Color(.neutral800))
+                .textFieldTitle()
                 .padding(.leading, 8)
                 .padding(.bottom, 7)
             
@@ -83,8 +73,7 @@ struct ShopDetailInfoView: View {
                             .frame(width: 16, height: 16)
                         
                         Text("배달 가능")
-                            .font(.pretendard(.medium, size: 14))
-                            .foregroundStyle(isDeliveryAvailable ? Color.sub500 : Color.neutral500)
+                            .mediumText(14, color: isDeliveryAvailable ? Color.sub500 : Color.neutral500)
                     }
                 }
 
@@ -98,8 +87,7 @@ struct ShopDetailInfoView: View {
                             .frame(width: 16, height: 16)
                         
                         Text("카드 가능")
-                            .font(.pretendard(.medium, size: 14))
-                            .foregroundStyle(isCardAvailable ? Color.sub500 : Color.neutral500)
+                            .mediumText(14, color: isDeliveryAvailable ? Color.sub500 : Color.neutral500)
                     }
                 }
                 
@@ -113,8 +101,7 @@ struct ShopDetailInfoView: View {
                             .frame(width: 16, height: 16)
                         
                         Text("계좌이체 가능")
-                            .font(.pretendard(.medium, size: 14))
-                            .foregroundStyle(isAccountAvailable ? Color.sub500 : Color.neutral500)
+                            .mediumText(14, color: isDeliveryAvailable ? Color.sub500 : Color.neutral500)
                     }
                 }
             }

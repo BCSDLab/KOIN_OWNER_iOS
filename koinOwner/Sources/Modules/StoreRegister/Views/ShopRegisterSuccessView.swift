@@ -19,13 +19,11 @@ struct ShopRegisterSuccessView: View {
                 .padding(.bottom, 24)
             
             Text("가게 등록 완료")
-                .font(.pretendard(.medium, size: 24))
-                .foregroundStyle(Color.main500)
+                .mediumText(24, color: Color.main500)
                 .padding(.bottom, 16)
             
             Text("가게 등록이 완료되었습니다.\n업체 정보 수정은 내 상점에서 가능합니다.")
-                .font(.pretendard(.regular, size: 16))
-                .foregroundStyle(Color.neutral500)
+                .regularText(16, color: Color.neutral500)
                 .multilineTextAlignment(.center)
                 .padding(.bottom, 56)
             
