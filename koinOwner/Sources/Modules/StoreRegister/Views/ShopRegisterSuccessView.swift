@@ -13,9 +13,7 @@ struct ShopRegisterSuccessView: View {
             Spacer()
             
             Image(.imgCheckCircle)
-                .resizable()
-                .scaledToFit()
-                .frame(width: 55, height: 55)
+                .customImage(width: 55, height: 55)
                 .padding(.bottom, 24)
             
             Text("가게 등록 완료")

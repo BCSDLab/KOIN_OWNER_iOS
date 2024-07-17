@@ -37,10 +37,7 @@ struct MainView: View {
                     
                     HStack(spacing: 0) {
                         Image(.icnInfo)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 16, height: 16)
-                            .foregroundStyle(Color.neutral400)
+                            .customImage(width: 16, height: 16)
                             .padding(.trailing, 4)
                         
                         Text("2024.03.09 업데이트")
@@ -102,10 +99,7 @@ extension MainView {
             LazyImage(url: URL(string: "https://i.namu.wiki/i/I63sEiy-8vUXVhV-I0IZiS9ntT0INuKXgBYAE3QqUvOlToSoEqSgpvEbUmxsFTXtoBRN4WJolyAFEAlDdeZFhQ.webp")) { state in
                 if let image = state.image {
                     image
-                        .resizable()
-                        .scaledToFill()
-                        .frame(height: 255)
-                        .clipped()
+                        .customImage(.fill, height: 255)
                 } else {
                     Rectangle() // TODO: placeholder 필요
                         .frame(width: .infinity, height: 255)
@@ -121,9 +115,7 @@ extension MainView {
                     Spacer()
                     
                     Image(.icnGear) // TODO: 아이콘 추가
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 24, height: 24)
+                        .customImage(width: 24, height: 24)
                         .padding(.vertical, 8)
                     
                     Text("가게 관리하기")
@@ -149,9 +141,7 @@ extension MainView {
                     ()
                 } label: {
                     Image(.icnGear) // TODO: 아이콘 추가
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 18, height: 18)
+                        .customImage(width: 18, height: 18)
                         .padding(.vertical, 6)
                         .padding(.horizontal, 9)
                 }
@@ -342,9 +332,7 @@ extension MainView {
                 } label: {
                     VStack(spacing: 2) {
                         Image(checkAllIdsIncluded() ? .icnCircleCheck : .icnCircleEmpty)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 16, height: 16)
+                            .customImage(width: 16, height: 16)
                         
                         Text("전체")
                             .regularText(12, color: Color.neutral500)
@@ -358,9 +346,7 @@ extension MainView {
                 } label: {
                     HStack(spacing: 5) {
                         Image(.icnPencil)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 16, height: 16)
+                            .customImage(width: 16, height: 16)
                         
                         Text("수정")
                             .mediumText(14, color: Color.neutral500)
@@ -374,9 +360,7 @@ extension MainView {
                 } label: {
                     HStack(spacing: 5) {
                         Image(.icnTrashBin)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 16, height: 16)
+                            .customImage(width: 16, height: 16)
                         
                         Text("삭제")
                             .mediumText(14, color: Color.neutral500)
@@ -392,9 +376,7 @@ extension MainView {
                 } label: {
                     HStack(spacing: 5) {
                         Image(.icnSquareEmpty)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 16, height: 16)
+                            .customImage(width: 16, height: 16)
                         
                         Text("완료")
                             .mediumText(14, color: Color.neutral500)
@@ -421,9 +403,7 @@ extension MainView {
                         Spacer()
                         
                         Image(.icnPencil)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 16, height: 16)
+                            .customImage(width: 16, height: 16)
                         
                         Text("편집하기")
                             .mediumText(14, color: Color.neutral500)
@@ -444,9 +424,7 @@ extension MainView {
                         Spacer()
 
                         Image(.icnAdd)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 16, height: 16)
+                            .customImage(width: 16, height: 16)
                         
                         Text("추가하기")
                             .mediumText(14, color: Color.neutral500)

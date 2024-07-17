@@ -68,9 +68,7 @@ struct ShopDetailInfoView: View {
                 } label: {
                     HStack(spacing: 8) {
                         Image(isDeliveryAvailable ? .btnToggleOn : .btnToggleOff)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 16, height: 16)
+                            .customImage(width: 16, height: 16)
                         
                         Text("배달 가능")
                             .mediumText(14, color: isDeliveryAvailable ? Color.sub500 : Color.neutral500)
@@ -82,9 +80,7 @@ struct ShopDetailInfoView: View {
                 } label: {
                     HStack(spacing: 8) {
                         Image(isCardAvailable ? .btnToggleOn : .btnToggleOff)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 16, height: 16)
+                            .customImage(width: 16, height: 16)
                         
                         Text("카드 가능")
                             .mediumText(14, color: isDeliveryAvailable ? Color.sub500 : Color.neutral500)
@@ -96,9 +92,7 @@ struct ShopDetailInfoView: View {
                 } label: {
                     HStack(spacing: 8) {
                         Image(isAccountAvailable ? .btnToggleOn : .btnToggleOff)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 16, height: 16)
+                            .customImage(width: 16, height: 16)
                         
                         Text("계좌이체 가능")
                             .mediumText(14, color: isDeliveryAvailable ? Color.sub500 : Color.neutral500)

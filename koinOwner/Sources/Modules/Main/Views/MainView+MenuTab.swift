@@ -39,10 +39,7 @@ extension MainView {
             LazyImage(url: URL(string: "https://i.namu.wiki/i/I63sEiy-8vUXVhV-I0IZiS9ntT0INuKXgBYAE3QqUvOlToSoEqSgpvEbUmxsFTXtoBRN4WJolyAFEAlDdeZFhQ.webp")) { state in
                 if let image = state.image {
                     image
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 68, height: 68)
-                        .clipShape(RoundedRectangle(cornerRadius: 5))
+                        .customImage(.fill, width: 68, height: 68, cornerRadius: 5)
                 } else {
                     RoundedRectangle(cornerRadius: 5) // TODO: placeholder 필요
                         .frame(width: 68, height: 68)
@@ -71,9 +68,7 @@ extension MainView {
             if !menus.isEmpty {
                 HStack(spacing: 8) {
                     Image(type.icon)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 24, height: 24)
+                        .customImage(width: 24, height: 24)
                     
                     Text(type.name)
                         .mediumText(18, color: Color.main400)

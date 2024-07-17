@@ -19,9 +19,7 @@ struct ShopMainInfoView: View {
             } label: {
                 VStack(spacing: 0) {
                     Image(.imgSpoonFork)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 64, height: 64)
+                        .customImage(width: 64, height: 64)
                         .padding(.bottom, 8)
                     
                     Text("영역을 선택하여 이미지를 추가하세요.")

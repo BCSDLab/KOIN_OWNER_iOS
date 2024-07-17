@@ -13,9 +13,7 @@ struct ShopRegisterEntryView: View {
             Spacer()
             
             Image(.imgEnterInfo)
-                .resizable()
-                .scaledToFit()
-                .frame(width: 55, height: 55)
+                .customImage(width: 55, height: 55)
                 .padding(.bottom, 38)
             
             Text("가게 정보 기입")

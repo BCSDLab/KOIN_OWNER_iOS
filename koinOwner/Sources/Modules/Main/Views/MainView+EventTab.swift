@@ -50,10 +50,7 @@ extension MainView {
                     LazyImage(url: URL(string: "https://i.namu.wiki/i/I63sEiy-8vUXVhV-I0IZiS9ntT0INuKXgBYAE3QqUvOlToSoEqSgpvEbUmxsFTXtoBRN4WJolyAFEAlDdeZFhQ.webp")) { state in
                         if let image = state.image {
                             image
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: isCurrentEvent ? UIScreen.screenWidth - 48 : 72, height: isCurrentEvent ? 363 : 80)
-                                .clipShape(RoundedRectangle(cornerRadius: 5))
+                                .customImage(.fill, width: isCurrentEvent ? UIScreen.screenWidth - 48 : 72, height: isCurrentEvent ? 363 : 80, cornerRadius: 5)
                         } else {
                             RoundedRectangle(cornerRadius: 5) // TODO: placeholder 필요
                                 .frame(width: isCurrentEvent ? UIScreen.screenWidth - 48 : 72, height: isCurrentEvent ? 363 : 80)
@@ -62,15 +59,12 @@ extension MainView {
                     }
                     .overlay(alignment: .topLeading) {
                         Image(.icnCircleCheck)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 16, height: 16)
+                            .customImage(width: 16, height: 16)
                             .opacity(selectedEvent.contains(event.id) ? 1 : 0)
                             .offset(x: -8, y: -8)
                     }
                 }
                 .disabled(!isCurrentEvent)
-
                                 
                 HStack(spacing: 0) {
                     VStack(alignment: .leading, spacing: 0) {
@@ -85,9 +79,7 @@ extension MainView {
                                     .mediumText(12, color: Color.neutral500)
                                 
                                 Image(isCurrentEvent ? .icnChevronUp : .icnChevronDown)
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 16, height: 16)
+                                    .customImage(width: 16, height: 16)
                             }
                         }
                         .padding(.bottom, 8)
