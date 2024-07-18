@@ -19,10 +19,9 @@ struct RegistrationFormView: View {
         WithViewStore(self.store, observe: { $0 }) { (viewStore: ViewStore<RegistrationFormFeature.State, RegistrationFormFeature.Action>) in
             VStack(alignment: .leading, spacing: 0) {
                 Text("전화번호")
+                    .textFieldTitle()
                     .padding(.top, 25)
                     .padding(.leading, 8)
-                    .font(.pretendard(.medium, size: 14))
-                    .foregroundStyle(Color(.neutral800))
                 
                 HStack {
                     CustomTextField(
@@ -40,19 +39,17 @@ struct RegistrationFormView: View {
                         viewStore.send(.sendCertificationNumber)
                     }) {
                         Text("인증번호 발송")
+                            .mediumText(15, color: Color.neutral0)
                             .frame(width: 106, height: 41)
-                            .font(.pretendard(.medium, size: 15))
-                            .foregroundStyle(Color.neutral0)
                             .background(Color.main500)
                             .clipShape(RoundedRectangle(cornerRadius: 4))
                     }
                 }
                 
                 Text("인증번호")
+                    .textFieldTitle()
                     .padding(.top, 25)
                     .padding(.leading, 8)
-                    .font(.pretendard(.medium, size: 14))
-                    .foregroundStyle(Color(.neutral800))
                 
                 HStack {
                     CustomTextField(
@@ -70,19 +67,17 @@ struct RegistrationFormView: View {
                         viewStore.send(.checkCertificationNumber)
                     }) {
                         Text("인증번호 확인")
+                            .mediumText(15, color: Color.neutral0)
                             .frame(width: 106, height: 41)
-                            .font(.pretendard(.medium, size: 15))
-                            .foregroundStyle(Color.neutral0)
                             .background(Color.main500)
                             .clipShape(RoundedRectangle(cornerRadius: 4))
                     }
                 }
                 
                 Text("비밀번호")
+                    .textFieldTitle()
                     .padding(.top, 25)
                     .padding(.leading, 8)
-                    .font(.pretendard(.medium, size: 14))
-                    .foregroundStyle(Color(.neutral800))
                 
                 CustomTextField(
                     placeholder: "비밀번호를 입력해주세요.",
@@ -95,10 +90,9 @@ struct RegistrationFormView: View {
                 .padding(.top, 7)
                 
                 Text("비밀번호 확인")
+                    .textFieldTitle()
                     .padding(.top, 25)
                     .padding(.leading, 8)
-                    .font(.pretendard(.medium, size: 14))
-                    .foregroundStyle(Color(.neutral800))
                 
                 CustomTextField(
                     placeholder: "비밀번호를 다시 입력해주세요.",

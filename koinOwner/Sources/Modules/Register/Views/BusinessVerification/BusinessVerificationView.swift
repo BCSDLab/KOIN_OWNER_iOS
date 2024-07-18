@@ -42,9 +42,8 @@ struct BusinessVerificationView: View {
                         viewStore.send(.searchShopButtonTapped)
                     }) {
                         Text("가게 검색")
+                            .mediumText(15, color: Color.neutral0)
                             .frame(width: 106, height: 41)
-                            .font(.pretendard(.medium, size: 15))
-                            .foregroundStyle(Color.neutral0)
                             .background(Color.main500)
                             .clipShape(RoundedRectangle(cornerRadius: 4))
                     }
