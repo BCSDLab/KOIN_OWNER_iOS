@@ -5,24 +5,24 @@
 //  Created by 김나훈 on 7/4/24.
 //
 
+import ComposableArchitecture
 import SwiftUI
 
 struct PolicyAgreementView: View {
     
-    @State private var isAgreeAllButtonToggled = false
-    @State private var isPersonalInformationButtonToggled = false
-    @State private var isKoinButtonToggled = false
+    private let store: StoreOf<PolicyAgreementFeature>
     
+    init(store: StoreOf<PolicyAgreementFeature>) {
+        self.store = store
+    }
     var body: some View {
+        WithViewStore(self.store, observe: { $0 }) { (viewStore: ViewStore<PolicyAgreementFeature.State, PolicyAgreementFeature.Action>) in
             VStack(spacing: 0) {
-    
                 HStack {
                     Button(action: {
-                        isAgreeAllButtonToggled.toggle()
-                        isPersonalInformationButtonToggled = isAgreeAllButtonToggled
-                        isKoinButtonToggled = isAgreeAllButtonToggled
+                        viewStore.send(.agreeAllButtonTapped)
                     }) {
-                        Image(isAgreeAllButtonToggled ? "on_small_select" : "off_small_select").resizable()
+                        Image(viewStore.isAgreeAllButtonToggled ? "on_small_select" : "off_small_select").resizable()
                             .scaledToFit()
                             .frame(width: 16, height: 16)
                     }.padding(.leading, 12)
@@ -33,9 +33,9 @@ struct PolicyAgreementView: View {
                 }.frame(maxWidth: .infinity, minHeight: 40).background(Color.neutral100).padding(.top, 9)
                 HStack {
                     Button(action: {
-                        isPersonalInformationButtonToggled.toggle()
+                        viewStore.send(.personalInformationButtonTapped)
                     }) {
-                        Image(isPersonalInformationButtonToggled ? "on_small_select" : "off_small_select").resizable()
+                        Image(viewStore.isPersonalInformationButtonToggled ? "on_small_select" : "off_small_select").resizable()
                             .scaledToFit()
                             .frame(width: 16, height: 16)
                     }.padding(.leading, 12)
@@ -54,9 +54,9 @@ struct PolicyAgreementView: View {
                 )
                 HStack {
                     Button(action: {
-                        isKoinButtonToggled.toggle()
+                        viewStore.send(.koinButtonTapped)
                     }) {
-                        Image(isKoinButtonToggled ? "on_small_select" : "off_small_select").resizable()
+                        Image(viewStore.isKoinButtonToggled ? "on_small_select" : "off_small_select").resizable()
                             .scaledToFit()
                             .frame(width: 16, height: 16)
                     }.padding(.leading, 12)
@@ -73,11 +73,13 @@ struct PolicyAgreementView: View {
                         .stroke(style: StrokeStyle(lineWidth: 1, dash: [5]))
                         .foregroundStyle(.neutral500)
                 )
-           
+            }
         }
     }
 }
 
 #Preview {
-    PolicyAgreementView()
+    PolicyAgreementView(store: .init(initialState: .init(), reducer: {
+        PolicyAgreementFeature()._printChanges()
+    }))
 }
