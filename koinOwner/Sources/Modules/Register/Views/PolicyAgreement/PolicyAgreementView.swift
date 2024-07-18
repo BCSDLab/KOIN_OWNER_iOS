@@ -27,8 +27,8 @@ struct PolicyAgreementView: View {
                             .frame(width: 16, height: 16)
                     }.padding(.leading, 12)
                     Text("모두 동의합니다.")
-                        .font(.pretendard(.medium, size: 14))
-                        .foregroundStyle(Color(.main500))
+                        .mediumText(14, color: Color.main500)
+                    
                     Spacer()
                 }.frame(maxWidth: .infinity, minHeight: 40).background(Color.neutral100).padding(.top, 9)
                 HStack {
@@ -40,12 +40,13 @@ struct PolicyAgreementView: View {
                             .frame(width: 16, height: 16)
                     }.padding(.leading, 12)
                     Text("개인정보 이용약관 (필수)")
-                        .font(.pretendard(.medium, size: 14))
-                        .foregroundStyle(Color(.neutral500))
+                        .mediumText(14, color: Color.neutral500)
                     Spacer()
                 }.padding(.vertical, 16)
                 ScrollView {
-                    Text(AgreementText.personalInformation.description).font(.pretendard(.regular, size: 10)).padding(12).lineSpacing(6)
+                    Text(AgreementText.personalInformation.description)
+                        .regularText(10)
+                        .padding(12).lineSpacing(6)
                 }.frame(maxWidth: .infinity, maxHeight: 168).background(
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(style: StrokeStyle(lineWidth: 1, dash: [5]))
@@ -60,12 +61,13 @@ struct PolicyAgreementView: View {
                             .frame(width: 16, height: 16)
                     }.padding(.leading, 12)
                     Text("코인 이용약관 (필수)")
-                        .font(.pretendard(.medium, size: 14))
-                        .foregroundStyle(Color(.neutral500))
+                        .mediumText(14, color: Color.neutral500)
                     Spacer()
                 }.padding(.vertical, 16)
                 ScrollView {
-                    Text(AgreementText.koin.description).font(.pretendard(.regular, size: 10)).padding(12).lineSpacing(6)
+                    Text(AgreementText.koin.description)
+                        .regularText(10)
+                        .padding(12).lineSpacing(6)
                 }.frame(maxWidth: .infinity, maxHeight: 168).background(
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(style: StrokeStyle(lineWidth: 1, dash: [5]))

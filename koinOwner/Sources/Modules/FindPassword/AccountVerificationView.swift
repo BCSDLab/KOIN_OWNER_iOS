@@ -13,13 +13,14 @@ struct AccountVerificationView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
                 Text("휴대폰 번호").padding(.top, 25).padding(.leading, 8)
-                    .font(.pretendard(.medium, size: 14))
-                    .foregroundStyle(Color(.neutral800))
+                    .textFieldTitle()
+            
                     CustomTextField(placeholder: "- 없이 번호를 입력해주세요.", text: $phoneNumber)
                         .padding(.top, 7)
+            
                 Text("인증번호").padding(.top, 25).padding(.leading, 8)
-                    .font(.pretendard(.medium, size: 14))
-                    .foregroundStyle(Color(.neutral800))
+                    .textFieldTitle()
+            
             HStack {
                 CustomTextField(placeholder: "인증번호를 입력해주세요.", text: $verificationCode)
                     .padding(.top, 7)
@@ -27,9 +28,8 @@ struct AccountVerificationView: View {
                     
                 }) {
                     Text("인증번호 발송")
+                        .mediumText(15, color: Color.neutral0)
                         .frame(width: 106, height: 41)
-                        .font(.pretendard(.medium, size: 15))
-                        .foregroundStyle(Color.neutral0)
                         .background(Color.main500)
                         .clipShape(RoundedRectangle(cornerRadius: 4))
                 }

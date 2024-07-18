@@ -65,8 +65,7 @@ struct CustomNavigationBar<Content: View>: View {
                     Spacer()
 
                     Text(title)
-                        .font(.pretendard(.medium, size: 18))
-                        .foregroundStyle(isColored ? Color.neutral0 : Color.neutral800)
+                        .mediumText(18, color: isColored ? Color.neutral0 : Color.neutral800)
                         .lineLimit(1)
                     
                     Spacer()
@@ -93,13 +92,10 @@ struct MainNavigationBar: View {
         HStack(spacing: 0) {
             HStack(alignment: .bottom, spacing: 9) {
                 Image(.imgLogo)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(height: 30)
-                
+                    .customImage(height: 30)
+           
                 Text("For Business")
-                    .font(.pretendard(.regular, size: 12))
-                    .foregroundStyle(Color.neutral0)
+                    .regularText(12, color: Color.neutral0)
             }
             
             Spacer()
@@ -108,9 +104,7 @@ struct MainNavigationBar: View {
                 () //TODO: 설명 View Navigation
             } label: {
                 Image(.icnMenu)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 24, height: 24)
+                    .customImage(width: 24, height: 24)
                     .foregroundStyle(Color.neutral0)
             }
 
@@ -130,9 +124,7 @@ struct BackButton: View {
             dismiss()
         } label: {
             Image(isColored ? .icnChevronBackWhite : .icnChevronBackBlack)
-                .resizable()
-                .scaledToFit()
-                .frame(width: 24, height: 24)
+                .customImage(width: 24, height: 24)
         }
     }
 }

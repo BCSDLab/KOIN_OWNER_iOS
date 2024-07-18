@@ -27,8 +27,7 @@ struct CustomButton<Label: View>: View {
             action()
         } label: {
             label
-                .font(.pretendard(.medium, size: 15))
-                .foregroundStyle(isDisabled ? Color.neutral600 : Color.neutral0)
+                .mediumText(15, color: isDisabled ? Color.neutral600 : Color.neutral0)
                 .frame(maxWidth: width, minHeight: height)
                 .background(isDisabled ? Color.neutral300 : Color.main600)
                 .clipShape(RoundedRectangle(cornerRadius: 4))
@@ -57,8 +56,7 @@ struct CustomSubButton<Label: View>: View {
             action()
         } label: {
             label
-                .font(.pretendard(.medium, size: 15))
-                .foregroundStyle(isDisabled ? Color.neutral600 : Color.neutral800)
+                .mediumText(15, color: isDisabled ? Color.neutral600 : Color.neutral800)
                 .frame(maxWidth: width, minHeight: height)
                 .background(isDisabled ? Color.neutral300 : Color.neutral100)
                 .clipShape(RoundedRectangle(cornerRadius: 4))

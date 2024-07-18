@@ -52,9 +52,7 @@ extension CategorySelectView {
         } label: {
             VStack(spacing: 0) {
                 Image(category.image)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 50, height: 50)
+                    .customImage(height: 50)
                     .padding(.bottom, 10)
                     .overlay {
                         Circle()
@@ -64,8 +62,7 @@ extension CategorySelectView {
                     }
                 
                 Text(category.title)
-                    .font(.pretendard(.regular, size: 13))
-                    .foregroundStyle(isSelected ? Color.sub500 : Color.neutral800)
+                    .regularText(13, color: isSelected ? Color.sub500 : Color.neutral800)
                     .frame(width: 60)
             }
         }

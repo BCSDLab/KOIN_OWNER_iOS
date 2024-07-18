@@ -13,13 +13,13 @@ struct ChangePasswordView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
                 Text("새 비밀번호").padding(.top, 25).padding(.leading, 8)
-                    .font(.pretendard(.medium, size: 14))
-                    .foregroundStyle(Color(.neutral800))
+                    .textFieldTitle()
+            
                     CustomTextField(placeholder: "새 비밀번호를 입력해주세요..", text: $password)
                         .padding(.top, 7)
+            
                 Text("비밀번호 확인").padding(.top, 25).padding(.leading, 8)
-                    .font(.pretendard(.medium, size: 14))
-                    .foregroundStyle(Color(.neutral800))
+                    .textFieldTitle()
    
                 CustomTextField(placeholder: "새 비밀번호를 다시 입력해주세요.", text: $confirmPassword)
                     .padding(.top, 7)

@@ -39,10 +39,7 @@ extension MainView {
             LazyImage(url: URL(string: "https://i.namu.wiki/i/I63sEiy-8vUXVhV-I0IZiS9ntT0INuKXgBYAE3QqUvOlToSoEqSgpvEbUmxsFTXtoBRN4WJolyAFEAlDdeZFhQ.webp")) { state in
                 if let image = state.image {
                     image
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 68, height: 68)
-                        .clipShape(RoundedRectangle(cornerRadius: 5))
+                        .customImage(.fill, width: 68, height: 68, cornerRadius: 5)
                 } else {
                     RoundedRectangle(cornerRadius: 5) // TODO: placeholder 필요
                         .frame(width: 68, height: 68)
@@ -53,12 +50,10 @@ extension MainView {
             
             VStack(alignment: .leading, spacing: 2) {
                 Text(menu.name)
-                    .font(.pretendard(.medium, size: 16))
-                    .foregroundStyle(Color.neutral800)
+                    .mediumText(16)
                     .lineLimit(2)
                 Text("\(menu.price)원")
-                    .font(.pretendard(.regular, size: 14))
-                    .foregroundStyle(Color.main500)
+                    .regularText(14, color: Color.main500)
             }
             
             Spacer()
@@ -73,13 +68,10 @@ extension MainView {
             if !menus.isEmpty {
                 HStack(spacing: 8) {
                     Image(type.icon)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 24, height: 24)
+                        .customImage(width: 24, height: 24)
                     
                     Text(type.name)
-                        .font(.pretendard(.medium, size: 18))
-                        .foregroundStyle(Color.main400)
+                        .mediumText(18, color: Color.main400)
                 }
                 .padding(.vertical, 4)
                 .padding(.horizontal, 9)
@@ -115,8 +107,7 @@ extension MainView {
             }
         } label: {
             Text(name)
-                .font(.pretendard(.regular, size: 12))
-                .foregroundStyle(currentMenu == value ? Color.neutral0 : Color.neutral500)
+                .regularText(12, color: currentMenu == value ? Color.neutral0 : Color.neutral500)
                 .padding(.vertical, 8)
                 .padding(.horizontal, 12)
                 .background(currentMenu == value ? Color.main500 : Color.neutral0)
