@@ -7,12 +7,10 @@
 
 import SwiftUI
 
-struct ShopInfoConfirmView: View {
-    @Binding var currentStep: Int
-    
-    var body: some View {
+extension ShopRegisterView {
+    var shopInfoConfirmView: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Text("가장 맛있는 족발") // MARK: 가게명
+            Text(viewStore.state.shopMainInfo.shopName) // MARK: 가게명
                 .boldText(20)
                 .padding(.bottom, 24)
             
@@ -22,7 +20,7 @@ struct ShopInfoConfirmView: View {
                         .regularText(16, color: Color.neutral500)
                         .frame(width: 64, alignment: .leading)
                     
-                    Text("족발")
+                    Text(viewStore.state.categorySelect.selectedCategory.title)
                         .regularText(16)
                     
                     Spacer()
@@ -33,7 +31,7 @@ struct ShopInfoConfirmView: View {
                         .regularText(16, color: Color.neutral500)
                         .frame(width: 64, alignment: .leading)
                     
-                    Text("천안시 동남구 총절로 880 가동 1층")
+                    Text(viewStore.state.shopMainInfo.address)
                         .regularText(16)
                         .lineLimit(1)
                     
@@ -44,8 +42,8 @@ struct ShopInfoConfirmView: View {
                     Text("전화번호")
                         .regularText(16, color: Color.neutral500)
                         .frame(width: 64, alignment: .leading)
-                
-                    Text("041-523-5849")
+                    
+                    Text(viewStore.state.shopDetailInfo.phoneNumber)
                         .regularText(16)
                     
                     Spacer()
@@ -56,7 +54,7 @@ struct ShopInfoConfirmView: View {
                         .regularText(16, color: Color.neutral500)
                         .frame(width: 64, alignment: .leading)
                     
-                    Text("0원")
+                    Text("\(viewStore.state.shopDetailInfo.deliveryFee)원")
                         .regularText(16)
                     
                     Spacer()
@@ -89,7 +87,7 @@ struct ShopInfoConfirmView: View {
                         .regularText(16, color: Color.neutral500)
                         .frame(width: 64, alignment: .leading)
                     
-                    Text("3대째 다져온 고집스러운 맛 3대째 다져온 고집스러운 맛 3대째 다져온 고집스러운 맛")
+                    Text(viewStore.state.shopDetailInfo.otherInfo)
                         .regularText(16)
                     
                     Spacer()
@@ -97,32 +95,16 @@ struct ShopInfoConfirmView: View {
             }
             .padding(.bottom, 16)
             
-            availableOptionRow(["카드", "계좌이체"])
+            availableOptionRow(viewStore.state.shopDetailInfo.availableOptions)
             
             Spacer()
             
-            HStack(spacing: 12) {
-                CustomSubButton {
-                    withAnimation {
-                        currentStep -= 1
-                    }
-                } label: {
-                    Text("이전")
-                }
-                .frame(width: UIScreen.screenWidth / 4)
-                
-                CustomButton {
-                    ()
-                } label: {
-                    Text("등록")
-                }
-            }
         }
         .padding(.horizontal, 24)
     }
 }
 
-extension ShopInfoConfirmView {
+extension ShopRegisterView {
     func availableOptionView(_ option: String) -> some View { // TODO: 가정 정보를 받아와서 param 변경
         Text("# \(option) 가능")
             .regularText(12, color: Color.main300)
@@ -131,17 +113,15 @@ extension ShopInfoConfirmView {
             .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color.main300))
     }
     
-    func availableOptionRow(_ options: [String]) -> some View { // TODO: 가정 정보를 받아와서 param 변경
+    func availableOptionRow(_ options: [Bool]) -> some View { // TODO: 가정 정보를 받아와서 param 변경
         ScrollView(.horizontal) {
             HStack(spacing: 10) {
-                ForEach(options, id: \.self) { option in
-                    availableOptionView(option)
+                ForEach(Array(zip(options.indices, options)), id: \.0) { index, option in
+                    if option {
+                        availableOptionView(AvailableOptions.init(rawValue: index)?.title ?? "")
+                    }
                 }
             }
         }
     }
-}
-
-#Preview {
-    ShopInfoConfirmView(currentStep: .constant(4))
 }

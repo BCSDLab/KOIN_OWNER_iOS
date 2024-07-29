@@ -12,7 +12,8 @@ import ComposableArchitecture
 
 struct MainView: View {
     let store: StoreOf<MainFeature>
-    
+    @ObservedObject var viewStore: ViewStore<MainFeature.State, MainFeature.Action>
+
     @State var progress: CGFloat = 0
     @State var currentOffset: CGFloat = 0
     private let minHeight = 56.0
@@ -20,71 +21,72 @@ struct MainView: View {
     
     init(store: StoreOf<MainFeature>) {
         self.store = store
+        self.viewStore = ViewStore(store, observe: { $0 })
     }
     
+    
     var body: some View {
-        WithViewStore(self.store, observe: { $0 }) { (viewStore: ViewStore<MainFeature.State, MainFeature.Action>) in
-            VStack(spacing: 0) {
-                ScrollViewReader { proxy in
-                    ScalingHeaderScrollView {
-                        headerView
-                    } content: {
-                        shopInfoView
-                            .padding(.bottom, 14)
-                            .padding(.horizontal, 24)
-                        
-                        availableOptionRow(["배달", "카드", "계좌이체"])
-                            .padding(.bottom, 44)
-                        
-                        HStack(spacing: 0) {
-                            Image(.icnInfo)
-                                .customImage(width: 16, height: 16)
-                                .padding(.trailing, 4)
-                            
-                            Text("2024.03.09 업데이트")
-                                .regularText(12, color: Color.neutral400)
-                            
-                            Spacer()
-                        }
-                        .padding(.horizontal, 24)
+        VStack(spacing: 0) {
+            ScrollViewReader { proxy in
+                ScalingHeaderScrollView {
+                    headerView
+                } content: {
+                    shopInfoView
                         .padding(.bottom, 14)
+                        .padding(.horizontal, 24)
+                    
+                    availableOptionRow(["배달", "카드", "계좌이체"])
+                        .padding(.bottom, 44)
+                    
+                    HStack(spacing: 0) {
+                        Image(.icnInfo)
+                            .customImage(width: 16, height: 16)
+                            .padding(.trailing, 4)
                         
-                        Rectangle()
-                            .frame(height: 12)
-                            .foregroundStyle(Color.neutral100)
+                        Text("2024.03.09 업데이트")
+                            .regularText(12, color: Color.neutral400)
                         
-                        LazyVStack(spacing: 0, pinnedViews: [.sectionHeaders]) {
-                            Section(header: tabBar(proxy: proxy)
-                                .id("tabBar")
-                                .background(Color.neutral0)
-                            ) {
-                                switch viewStore.state.currentTab {
-                                case 0:
-                                    menuTab()
-                                case 1:
-                                    eventTab
-                                default:
-                                    EmptyView()
-                                }
+                        Spacer()
+                    }
+                    .padding(.horizontal, 24)
+                    .padding(.bottom, 14)
+                    
+                    Rectangle()
+                        .frame(height: 12)
+                        .foregroundStyle(Color.neutral100)
+                    
+                    LazyVStack(spacing: 0, pinnedViews: [.sectionHeaders]) {
+                        Section(header: tabBar(proxy: proxy)
+                            .id("tabBar")
+                            .background(Color.neutral0)
+                        ) {
+                            switch viewStore.state.currentTab {
+                            case 0:
+                                menuTab()
+                            case 1:
+                                eventTab
+                            default:
+                                EmptyView()
                             }
-                            
                         }
                         
                     }
-                    .height(min: minHeight, max: maxHeight)
-                    .collapseProgress($progress)
-                    .scrollOffset($currentOffset)
+                    
                 }
-            }
-            .mainNavigationBar()
-            .onChange(of: viewStore.state.currentTab) { _ in
-                viewStore.send(.currentTabChanged, animation: .default)
-            }
-            .onChange(of: viewStore.state.isEditing) { _ in
-                viewStore.send(.isEditingChanged, animation: .default)
-                
+                .height(min: minHeight, max: maxHeight)
+                .collapseProgress($progress)
+                .scrollOffset($currentOffset)
             }
         }
+        .mainNavigationBar()
+        .onChange(of: viewStore.state.currentTab) { _ in
+            viewStore.send(.currentTabChanged, animation: .default)
+        }
+        .onChange(of: viewStore.state.isEditing) { _ in
+            viewStore.send(.isEditingChanged, animation: .default)
+            
+        }
+        
     }
 }
 
