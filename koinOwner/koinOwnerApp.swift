@@ -11,7 +11,9 @@ import SwiftUI
 struct KoinOwnerApp: App {
     var body: some Scene {
         WindowGroup {
-            ShopRegisterView(registerType: .management)
+            ShopRegisterView(store: .init(initialState: .init(registerType: .register), reducer: {
+                ShopRegisterFeature()._printChanges()
+            }))
         }
     }
 }

@@ -8,19 +8,22 @@
 import SwiftUI
 import NukeUI
 import ScalingHeaderScrollView
+import ComposableArchitecture
 
 struct MainView: View {
-    @State var currentTab: Int = 0
-    @State var currentMenu: Int = -1
-    @State var isEditing: Bool = false
-    @State var currentEvent: Int = -1
-    
-    @State var selectedEvent: [Int] = []
-    
+    let store: StoreOf<MainFeature>
+    @ObservedObject var viewStore: ViewStore<MainFeature.State, MainFeature.Action>
+
     @State var progress: CGFloat = 0
     @State var currentOffset: CGFloat = 0
     private let minHeight = 56.0
     private let maxHeight = 364.0
+    
+    init(store: StoreOf<MainFeature>) {
+        self.store = store
+        self.viewStore = ViewStore(store, observe: { $0 })
+    }
+    
     
     var body: some View {
         VStack(spacing: 0) {
@@ -57,7 +60,7 @@ struct MainView: View {
                             .id("tabBar")
                             .background(Color.neutral0)
                         ) {
-                            switch currentTab {
+                            switch viewStore.state.currentTab {
                             case 0:
                                 menuTab()
                             case 1:
@@ -76,19 +79,14 @@ struct MainView: View {
             }
         }
         .mainNavigationBar()
-        .onChange(of: currentTab) { _ in
-            withAnimation {
-                currentMenu = -1
-                currentEvent = -1
-                isEditing = false
-            }
+        .onChange(of: viewStore.state.currentTab) { _ in
+            viewStore.send(.currentTabChanged, animation: .default)
         }
-        .onChange(of: isEditing) { _ in
-            withAnimation {
-                currentEvent = -1
-                selectedEvent.removeAll()
-            }
+        .onChange(of: viewStore.state.isEditing) { _ in
+            viewStore.send(.isEditingChanged, animation: .default)
+            
         }
+        
     }
 }
 
@@ -109,12 +107,12 @@ extension MainView {
             .opacity(1 - progress)
             
             Button {
-                ()
+                store.send(.shopManagementButtonTapped, animation: .default)
             } label: {
                 HStack(spacing: 8) {
                     Spacer()
                     
-                    Image(.icnGear) // TODO: 아이콘 추가
+                    Image(.icnGear)
                         .customImage(width: 24, height: 24)
                         .padding(.vertical, 8)
                     
@@ -138,9 +136,9 @@ extension MainView {
                 Spacer()
                 
                 Button {
-                    ()
+                    store.send(.shopManagementButtonTapped, animation: .default)
                 } label: {
-                    Image(.icnGear) // TODO: 아이콘 추가
+                    Image(.icnGear)
                         .customImage(width: 18, height: 18)
                         .padding(.vertical, 6)
                         .padding(.horizontal, 9)
@@ -256,27 +254,25 @@ extension MainView {
         VStack(alignment: .leading, spacing: 0) {
             HStack(spacing: 0) {
                 Button {
-                    currentTab = 0
+                    store.send(.menuButtonTapped)
                     withAnimation(.easeInOut(duration: 0.3)) {
                         proxy.scrollTo("tabBar", anchor: .top)
                     }
                 } label: {
                     Text("메뉴")
-                        .mediumText(16, color: currentTab == 0 ? Color.main500 : Color.neutral500)
+                        .mediumText(16, color: store.state.currentTab == 0 ? Color.main500 : Color.neutral500)
                         .padding(.vertical, 10)
                         .frame(width: UIScreen.screenWidth / 2)
                 }
                 
                 Button {
-                    currentTab = 1
+                    store.send(.eventButtonTapped)
                     withAnimation(.easeInOut(duration: 0.3)) {
                         proxy.scrollTo("tabBar", anchor: .top)
                     }
-                   
-//                    snapTo = .custom(286)
                 } label: {
                     Text("이벤트/공지")
-                        .mediumText(16, color: currentTab == 1 ? Color.main500 : Color.neutral500)
+                        .mediumText(16, color: store.state.currentTab == 1 ? Color.main500 : Color.neutral500)
                         .padding(.vertical, 10)
                         .frame(width: UIScreen.screenWidth / 2)
                 }
@@ -285,10 +281,10 @@ extension MainView {
             Rectangle()
                 .frame(width: UIScreen.screenWidth / 2, height: 1.5)
                 .foregroundStyle(Color.main500)
-                .offset(x: CGFloat(currentTab) * (UIScreen.screenWidth / 2))
-                .animation(.easeInOut, value: currentTab)
+                .offset(x: CGFloat(store.state.currentTab) * (UIScreen.screenWidth / 2))
+                .animation(.easeInOut, value: store.state.currentTab)
             
-            switch currentTab {
+            switch store.state.currentTab {
             case 0:
                 menuHeader
             case 1:
@@ -297,7 +293,6 @@ extension MainView {
                 EmptyView()
             }
         }
-//        .frame(height: 46)
         .padding(.top, currentOffset >= 592 ?  min(62, currentOffset - 592) : 0)
     }
     
@@ -315,23 +310,13 @@ extension MainView {
     
     @ViewBuilder
     var eventHeader: some View {
-        if isEditing {
+        if store.state.isEditing {
             HStack(spacing: 18) {
                 Button {
-                    withAnimation {
-                        if checkAllIdsIncluded() {
-                            selectedEvent.removeAll()
-                        } else {
-                            for event in Event.mock {
-                                if !selectedEvent.contains(where: { $0 == event.id }) {
-                                    selectedEvent.append(event.id)
-                                }
-                            }
-                        }
-                    }
+                    store.send(.eventSelectAllButtonTapped, animation: .default)
                 } label: {
                     VStack(spacing: 2) {
-                        Image(checkAllIdsIncluded() ? .icnCircleCheck : .icnCircleEmpty)
+                        Image(store.state.checkAllIdsIncluded ? .icnCircleCheck : .icnCircleEmpty)
                             .customImage(width: 16, height: 16)
                         
                         Text("전체")
@@ -342,7 +327,7 @@ extension MainView {
                 Spacer()
                 
                 Button {
-                    
+                    store.send(.eventEditButtonTapped, animation: .default)
                 } label: {
                     HStack(spacing: 5) {
                         Image(.icnPencil)
@@ -356,7 +341,7 @@ extension MainView {
                 }
                 
                 Button {
-                    
+                    store.send(.eventDeleteButtonTapped, animation: .default)
                 } label: {
                     HStack(spacing: 5) {
                         Image(.icnTrashBin)
@@ -370,9 +355,7 @@ extension MainView {
                 }
                 
                 Button {
-                    withAnimation {
-                        isEditing = false
-                    }
+                    store.send(.eventManagementCompleteButtonTapped, animation: .default)
                 } label: {
                     HStack(spacing: 5) {
                         Image(.icnSquareEmpty)
@@ -395,9 +378,7 @@ extension MainView {
         } else {
             HStack(spacing: 9) {
                 Button {
-                    withAnimation {
-                        isEditing = true
-                    }
+                    store.send(.eventManagementButtonTapped, animation: .default)
                 } label: {
                     HStack(spacing: 8) {
                         Spacer()
@@ -416,9 +397,7 @@ extension MainView {
                 }
 
                 Button {
-                    withAnimation {
-                       ()
-                    }
+                    store.send(.eventAddButtonTapped, animation: .default)
                 } label: {
                     HStack(spacing: 8) {
                         Spacer()
@@ -440,15 +419,10 @@ extension MainView {
             .padding(.horizontal, 24)
         }
     }
-    
-    // 임시 함수
-    func checkAllIdsIncluded() -> Bool {
-        let allIds = Set(Event.mock.map { $0.id })
-        let selectedIds = Set(selectedEvent)
-        return allIds.isSubset(of: selectedIds)
-    }
 }
 
 #Preview {
-    MainView()
+    MainView(store: .init(initialState: .init(), reducer: {
+        MainFeature()._printChanges()
+    }))
 }
