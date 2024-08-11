@@ -12,7 +12,7 @@ extension MainView {
     @MainActor
     func menuTab() -> some View {
         VStack(spacing: 0) {
-            switch currentMenu {
+            switch store.state.currentMenu {
             case -1:
                 menuList(menus: Menu.recMock, type: .recommended)
                 menuList(menus: Menu.mainMock, type: .main)
@@ -98,23 +98,17 @@ extension MainView {
     
     func menuTypeButton(name: String, value: Int) -> some View {
         Button {
-            withAnimation {
-                if currentMenu == value {
-                    currentMenu = -1
-                } else {
-                    currentMenu = value
-                }
-            }
+            store.send(.menuTypeButtonTapped(value), animation: .default)
         } label: {
             Text(name)
-                .regularText(12, color: currentMenu == value ? Color.neutral0 : Color.neutral500)
+                .regularText(12, color: store.state.currentMenu == value ? Color.neutral0 : Color.neutral500)
                 .padding(.vertical, 8)
                 .padding(.horizontal, 12)
-                .background(currentMenu == value ? Color.main500 : Color.neutral0)
+                .background(store.state.currentMenu == value ? Color.main500 : Color.neutral0)
                 .clipShape(RoundedRectangle(cornerRadius: 4))
                 .overlay {
                     RoundedRectangle(cornerRadius: 4)
-                        .strokeBorder(currentMenu == value ? Color.main500 : Color.neutral400)
+                        .strokeBorder(store.state.currentMenu == value ? Color.main500 : Color.neutral400)
                 }
         }
     }

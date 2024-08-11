@@ -6,16 +6,22 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct CategorySelectView: View {
-    @Binding var currentStep: Int
-    @State var currentCategory: ShopCategory = .none
+    let store: StoreOf<CategorySelectFeature>
+    @ObservedObject var viewStore: ViewStore<CategorySelectFeature.State, CategorySelectFeature.Action>
+    
+    init(store: StoreOf<CategorySelectFeature>) {
+        self.store = store
+        self.viewStore = ViewStore(store, observe: { $0 })
+    }
     
     var body: some View {
         VStack(spacing: 0) {
             HStack(spacing: 15) {
                 ForEach(1..<6) { index in
-                    categoryButton(ShopCategory(rawValue: index) ?? .chicken, isSelected: currentCategory == ShopCategory(rawValue: index) ?? .chicken)
+                    categoryButton(ShopCategory(rawValue: index) ?? .chicken, isSelected: viewStore.state.selectedCategory == ShopCategory(rawValue: index) ?? .chicken)
                 }
             }
            
@@ -23,32 +29,19 @@ struct CategorySelectView: View {
             
             HStack(spacing: 15) {
                 ForEach(6..<10) { index in
-                    categoryButton(ShopCategory(rawValue: index) ?? .chicken, isSelected: currentCategory == ShopCategory(rawValue: index) ?? .chicken)
+                    categoryButton(ShopCategory(rawValue: index) ?? .chicken, isSelected: viewStore.state.selectedCategory == ShopCategory(rawValue: index) ?? .chicken)
                 }
             }
             
             Spacer()
-            
-            CustomButton(action: {
-                withAnimation {
-                    currentStep += 1
-                }
-            }, label: {
-                Text("다음")
-            }, isDisabled: currentCategory == .none)
-            .padding(.horizontal, 24)
-        
         }
-       
     }
 }
 
 extension CategorySelectView {
     func categoryButton(_ category: ShopCategory, isSelected: Bool) -> some View {
         Button {
-            withAnimation {
-                currentCategory = category
-            }
+            viewStore.send(.categoryButtonTapped(category), animation: .default)
         } label: {
             VStack(spacing: 0) {
                 Image(category.image)
@@ -133,5 +126,7 @@ enum ShopCategory: Int, CaseIterable {
 }
 
 #Preview {
-    CategorySelectView(currentStep: .constant(1))
+    CategorySelectView(store: .init(initialState: .init(), reducer: {
+        CategorySelectFeature()._printChanges()
+    }))
 }

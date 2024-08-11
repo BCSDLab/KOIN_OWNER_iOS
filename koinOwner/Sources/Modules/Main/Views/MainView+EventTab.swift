@@ -20,26 +20,10 @@ extension MainView {
     
     @MainActor
     func eventRow(event: Event) -> some View {
-        let isCurrentEvent: Bool = currentEvent == event.id
+        let isCurrentEvent: Bool = store.state.currentEvent == event.id
         let layout = isCurrentEvent ? AnyLayout(VStackLayout(spacing: 16)) : AnyLayout(HStackLayout(spacing: 16))
         return Button {
-            if isEditing {
-                withAnimation {
-                    if selectedEvent.contains(where: { $0 == event.id }) {
-                        selectedEvent.removeAll(where: { $0 == event.id })
-                    } else {
-                        selectedEvent.append(event.id)
-                    }
-                }
-            } else {
-                withAnimation {
-                    if isCurrentEvent {
-                        currentEvent = -1
-                    } else {
-                        currentEvent = event.id
-                    }
-                }
-            }
+            store.send(.eventRowTapped(event, isCurrentEvent), animation: .default)
         } label: {
             layout {
                 Button {
@@ -60,7 +44,7 @@ extension MainView {
                     .overlay(alignment: .topLeading) {
                         Image(.icnCircleCheck)
                             .customImage(width: 16, height: 16)
-                            .opacity(selectedEvent.contains(event.id) ? 1 : 0)
+                            .opacity(store.state.selectedEvent.contains(event.id) ? 1 : 0)
                             .offset(x: -8, y: -8)
                     }
                 }
@@ -86,7 +70,7 @@ extension MainView {
                         
                         Text(event.content)
                             .regularText(12, color: Color.neutral500)
-                            .lineLimit(currentEvent == event.id ? .none : 2)
+                            .lineLimit(store.state.currentEvent == event.id ? .none : 2)
                             .multilineTextAlignment(.leading)
                             .padding(.bottom, 6)
 

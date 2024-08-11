@@ -6,16 +6,21 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct ShopMainInfoView: View {
-    @Binding var currentStep: Int
-    @State var shopName: String = ""
-    @State var address: String = ""
+    let store: StoreOf<ShopMainInfoFeature>
+    @ObservedObject var viewStore: ViewStore<ShopMainInfoFeature.State, ShopMainInfoFeature.Action>
+    
+    init(store: StoreOf<ShopMainInfoFeature>) {
+        self.store = store
+        self.viewStore = ViewStore(store, observe: { $0 })
+    }
     
     var body: some View {
         VStack(spacing: 0) {
             Button {
-                ()
+                viewStore.send(.addImageButtonTapped)
             } label: {
                 VStack(spacing: 0) {
                     Image(.imgSpoonFork)
@@ -38,10 +43,13 @@ struct ShopMainInfoView: View {
                     .padding(.bottom, 7)
                 
                 HStack(spacing: 16) {
-                    CustomTextField(placeholder: "가게명을 입력하세요.", text: $shopName)
+                    CustomTextField(placeholder: "가게명을 입력하세요.",
+                                    text: viewStore.binding(
+                                        get: \.shopName,
+                                        send: ShopMainInfoFeature.Action.shopNameChanged))
                     
                     Button {
-                        ()
+                        viewStore.send(.searchShopButtonTapped)
                     } label: {
                         Text("가게 검색")
                             .mediumText(15, color: Color.neutral0)
@@ -58,35 +66,21 @@ struct ShopMainInfoView: View {
                     .padding(.leading, 8)
                     .padding(.bottom, 7)
                 
-                CustomTextField(placeholder: "주소를 입력하세요.", text: $address)
+                CustomTextField(placeholder: "주소를 입력하세요.", 
+                                text: viewStore.binding(
+                                    get: \.address,
+                                    send: ShopMainInfoFeature.Action.addressChanged))
             }
             .padding(.horizontal, 24)
             
             Spacer()
             
-            HStack(spacing: 12) {
-                CustomSubButton {
-                    withAnimation {
-                        currentStep -= 1
-                    }
-                } label: {
-                    Text("이전")
-                }
-                .frame(width: UIScreen.screenWidth / 4)
-                
-                CustomButton {
-                    withAnimation {
-                        currentStep += 1
-                    }
-                } label: {
-                    Text("다음")
-                }
-            }
-            .padding(.horizontal, 24)
         }
     }
 }
 
 #Preview {
-    ShopMainInfoView(currentStep: .constant(2))
+    ShopMainInfoView(store: .init(initialState: .init(), reducer: {
+        ShopMainInfoFeature()._printChanges()
+    }))
 }
