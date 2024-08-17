@@ -39,13 +39,15 @@
 		D210A01F2C703AC100D518D7 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = D210A01E2C703AC100D518D7 /* CombineMoya */; };
 		D210A0212C703AC100D518D7 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = D210A0202C703AC100D518D7 /* Moya */; };
 		D210A0242C703AE400D518D7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D210A0232C703AE400D518D7 /* Alamofire */; };
+		D210A0262C703CFA00D518D7 /* VerificationSmsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D210A0252C703CFA00D518D7 /* VerificationSmsRequest.swift */; };
+		D210A0282C703E2100D518D7 /* VerificationCodeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D210A0272C703E2100D518D7 /* VerificationCodeRequest.swift */; };
+		D210A02A2C703E9500D518D7 /* OwnerRegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D210A0292C703E9500D518D7 /* OwnerRegisterRequest.swift */; };
 		D229EBC42C33A7C7004D54F9 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = D229EBC32C33A7C7004D54F9 /* .swiftlint.yml */; };
 		D22E63892C465CCA00A2139F /* RegisterFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22E63882C465CCA00A2139F /* RegisterFeature.swift */; };
 		D22E638F2C4665F400A2139F /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = D22E638E2C4665F400A2139F /* ComposableArchitecture */; };
 		D22E63992C46ED2B00A2139F /* exampleNetwork in Resources */ = {isa = PBXBuildFile; fileRef = D22E63982C46ED2B00A2139F /* exampleNetwork */; };
 		D22E639B2C46ED4600A2139F /* exampleKeyChain in Resources */ = {isa = PBXBuildFile; fileRef = D22E639A2C46ED4600A2139F /* exampleKeyChain */; };
 		D22E639F2C46ED8B00A2139F /* exampleClient in Resources */ = {isa = PBXBuildFile; fileRef = D22E639E2C46ED8B00A2139F /* exampleClient */; };
-		D22E63A32C46EDB200A2139F /* exampleDTO in Resources */ = {isa = PBXBuildFile; fileRef = D22E63A22C46EDB200A2139F /* exampleDTO */; };
 		D22E63A52C46EDF200A2139F /* exampleUserDefaults in Resources */ = {isa = PBXBuildFile; fileRef = D22E63A42C46EDF200A2139F /* exampleUserDefaults */; };
 		D22E63AB2C47082600A2139F /* BusinessVerificationFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22E63AA2C47082600A2139F /* BusinessVerificationFeature.swift */; };
 		D22E63AD2C47083B00A2139F /* RegistrationFormFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22E63AC2C47083A00A2139F /* RegistrationFormFeature.swift */; };
@@ -94,12 +96,14 @@
 		1BE537FE2C57773D00E5BA3D /* CategorySelectFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectFeature.swift; sourceTree = "<group>"; };
 		1BE538012C577C8600E5BA3D /* ShopMainInfoFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopMainInfoFeature.swift; sourceTree = "<group>"; };
 		1BE538042C577EC300E5BA3D /* ShopDetailInfoFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailInfoFeature.swift; sourceTree = "<group>"; };
+		D210A0252C703CFA00D518D7 /* VerificationSmsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationSmsRequest.swift; sourceTree = "<group>"; };
+		D210A0272C703E2100D518D7 /* VerificationCodeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCodeRequest.swift; sourceTree = "<group>"; };
+		D210A0292C703E9500D518D7 /* OwnerRegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerRegisterRequest.swift; sourceTree = "<group>"; };
 		D229EBC32C33A7C7004D54F9 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		D22E63882C465CCA00A2139F /* RegisterFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFeature.swift; sourceTree = "<group>"; };
 		D22E63982C46ED2B00A2139F /* exampleNetwork */ = {isa = PBXFileReference; lastKnownFileType = text; path = exampleNetwork; sourceTree = "<group>"; };
 		D22E639A2C46ED4600A2139F /* exampleKeyChain */ = {isa = PBXFileReference; lastKnownFileType = text; path = exampleKeyChain; sourceTree = "<group>"; };
 		D22E639E2C46ED8B00A2139F /* exampleClient */ = {isa = PBXFileReference; lastKnownFileType = text; path = exampleClient; sourceTree = "<group>"; };
-		D22E63A22C46EDB200A2139F /* exampleDTO */ = {isa = PBXFileReference; lastKnownFileType = text; path = exampleDTO; sourceTree = "<group>"; };
 		D22E63A42C46EDF200A2139F /* exampleUserDefaults */ = {isa = PBXFileReference; lastKnownFileType = text; path = exampleUserDefaults; sourceTree = "<group>"; };
 		D22E63AA2C47082600A2139F /* BusinessVerificationFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessVerificationFeature.swift; sourceTree = "<group>"; };
 		D22E63AC2C47083A00A2139F /* RegistrationFormFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationFormFeature.swift; sourceTree = "<group>"; };
@@ -323,7 +327,9 @@
 		D22E63A12C46EDA100A2139F /* Register */ = {
 			isa = PBXGroup;
 			children = (
-				D22E63A22C46EDB200A2139F /* exampleDTO */,
+				D210A0252C703CFA00D518D7 /* VerificationSmsRequest.swift */,
+				D210A0272C703E2100D518D7 /* VerificationCodeRequest.swift */,
+				D210A0292C703E9500D518D7 /* OwnerRegisterRequest.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -540,7 +546,6 @@
 				1B5D7E4C2C329AF200850B30 /* Pretendard-Bold.otf in Resources */,
 				D22E639F2C46ED8B00A2139F /* exampleClient in Resources */,
 				D22E63A52C46EDF200A2139F /* exampleUserDefaults in Resources */,
-				D22E63A32C46EDB200A2139F /* exampleDTO in Resources */,
 				1B5D7E4B2C329AF200850B30 /* Pretendard-Regular.otf in Resources */,
 				D22E639B2C46ED4600A2139F /* exampleKeyChain in Resources */,
 				D2EE25822C30A463000B8015 /* Preview Assets.xcassets in Resources */,
@@ -584,6 +589,7 @@
 				D239449E2C3CC8E200048F45 /* ChangePasswordView.swift in Sources */,
 				1B303B692C365F9F00E1ECEA /* MainView+MenuTab.swift in Sources */,
 				1B5D7E802C34E0C000850B30 /* CustomNavigationBar.swift in Sources */,
+				D210A0282C703E2100D518D7 /* VerificationCodeRequest.swift in Sources */,
 				1B303B872C51F60A00E1ECEA /* MainFeature.swift in Sources */,
 				1B303B752C3E4E9400E1ECEA /* CustomButton.swift in Sources */,
 				D22E63AB2C47082600A2139F /* BusinessVerificationFeature.swift in Sources */,
@@ -592,6 +598,7 @@
 				1B303B662C35107300E1ECEA /* UIScreen+Size.swift in Sources */,
 				D22E63AD2C47083B00A2139F /* RegistrationFormFeature.swift in Sources */,
 				1B303B7F2C3F801400E1ECEA /* ShopRegisterSuccessView.swift in Sources */,
+				D210A0262C703CFA00D518D7 /* VerificationSmsRequest.swift in Sources */,
 				1B303B702C3E49AD00E1ECEA /* ShopRegisterView.swift in Sources */,
 				1B303B6D2C389D4200E1ECEA /* UINavigationController+SwipeToDismiss.swift in Sources */,
 				1B5D7E802C34E0C000850B30 /* CustomNavigationBar.swift in Sources */,
@@ -612,6 +619,7 @@
 				1B5D7E7D2C34DF3000850B30 /* MainView.swift in Sources */,
 				D22E63892C465CCA00A2139F /* RegisterFeature.swift in Sources */,
 				1B5D7E542C32A25A00850B30 /* Font+Custom.swift in Sources */,
+				D210A02A2C703E9500D518D7 /* OwnerRegisterRequest.swift in Sources */,
 				1B303B6B2C3667DC00E1ECEA /* MainView+EventTab.swift in Sources */,
 				D239449C2C3CC6D400048F45 /* AccountVerificationView.swift in Sources */,
 				1BE538052C577EC300E5BA3D /* ShopDetailInfoFeature.swift in Sources */,
