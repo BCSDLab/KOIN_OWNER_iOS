@@ -15,6 +15,7 @@ struct BusinessVerificationFeature: Reducer {
         var ownerName: String = ""
         var shopName: String = ""
         var businessRegistrationNumber: String = ""
+        var isCompleted: Bool = false
     }
     
     enum Action {

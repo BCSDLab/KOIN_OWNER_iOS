@@ -9,15 +9,16 @@ import ComposableArchitecture
 
 @Reducer
 struct RegistrationFormFeature: Reducer {
-
+    
     @ObservableState
     struct State: Equatable {
-       var phoneNumber: String = ""
-       var verificationCode: String = ""
-       var password: String = ""
-       var confirmPassword: String = ""
+        var phoneNumber: String = ""
+        var verificationCode: String = ""
+        var password: String = ""
+        var confirmPassword: String = ""
+        var isCompleted: Bool = false
     }
-
+    
     enum Action {
         // User Button Action
         case sendCertificationNumber
@@ -34,7 +35,7 @@ struct RegistrationFormFeature: Reducer {
         // 비밀번호 확인이 일치하는지 검사
         case checkPasswordMatch
     }
-
+    
     var body: some Reducer<State, Action> {
         Reduce<State, Action> { state, action in
             switch action {

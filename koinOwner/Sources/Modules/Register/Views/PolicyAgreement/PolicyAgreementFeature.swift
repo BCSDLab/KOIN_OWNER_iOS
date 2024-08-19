@@ -9,20 +9,24 @@ import ComposableArchitecture
 
 @Reducer
 struct PolicyAgreementFeature: Reducer {
-
+    
     @ObservableState
     struct State: Equatable {
         var isAgreeAllButtonToggled = false
         var isPersonalInformationButtonToggled = false
         var isKoinButtonToggled = false
+        
+        var isCompleted: Bool {
+            return isPersonalInformationButtonToggled && isKoinButtonToggled
+        }
     }
-
+    
     enum Action {
         case agreeAllButtonTapped
         case personalInformationButtonTapped
         case koinButtonTapped
     }
-
+    
     var body: some Reducer<State, Action> {
         Reduce<State, Action> { state, action in
             switch action {

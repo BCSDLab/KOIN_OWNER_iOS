@@ -10,7 +10,7 @@ import SwiftUI
 
 struct RegisterView: View {
     
-    let store: StoreOf<RegisterFeature>
+    @Bindable private var store: StoreOf<RegisterFeature>
     
     init(store: StoreOf<RegisterFeature>) {
         self.store = store
@@ -22,47 +22,42 @@ struct RegisterView: View {
                     HStack {
                         Group {
                             switch viewStore.state.currentStep {
-                            case 1: Text("1. 약관 동의")
-                            case 2: Text("2. 기본 정보 입력")
-                            default: Text("3. 사업자 인증")
+                            case .one: Text("1. 약관 동의")
+                            case .two: Text("2. 기본 정보 입력")
+                            case .three: Text("3. 사업자 인증")
                             }
                         }
                         
                         Spacer()
-                        Text("\(viewStore.state.currentStep) / 3")
+                        Text("\(viewStore.state.currentStep.rawValue) / \(RegisterTab.allCases.count)")
                     }
                      .progressBarTitle()
 
-                    CustomProgressBar(progress: Double(viewStore.state.currentStep) / 3.0)
+                    CustomProgressBar(progress: Double(viewStore.state.currentStep.rawValue) / 3.0)
                         .frame(height: 8).padding(.top, 8)
                     switch viewStore.state.currentStep {
-                    case 1:
-                        PolicyAgreementView(store: .init(initialState: .init(), reducer: {
-                            PolicyAgreementFeature()._printChanges()
-                        }))
-                    case 2:
-                        RegistrationFormView(store: .init(initialState: .init(), reducer: {
-                            RegistrationFormFeature()._printChanges()
-                        }))
-                    default:
-                        BusinessVerificationView(store: .init(initialState: .init(), reducer: {
-                            BusinessVerificationFeature()._printChanges()
-                        }))
+                    case .one:
+                        PolicyAgreementView(store: store.scope(state: \.policyAgreement, action: \.policyAgreement))
+                    case .two:
+                        RegistrationFormView(store: store.scope(state: \.registrationForm, action: \.registrationForm))
+                    case .three:
+                        BusinessVerificationView(store: store.scope(state: \.businessVerification, action: \.businessVerification))
                     }
                     Spacer()
                     Button(action: {
                         switch viewStore.state.currentStep {
-                        case 1, 2: viewStore.send(.nextButtonTapped)
-                        default: viewStore.send(.completeButtonTapped)
+                        case .one, .two: viewStore.send(.nextButtonTapped)
+                        case .three: viewStore.send(.completeButtonTapped)
                         }
                     }) {
                         Text("다음")
-                            .mediumText(15, color: Color.neutral600)
+                            .mediumText(15, color: viewStore.state.isNextButtonEnabled ? Color.neutral0 : Color.neutral600)
                             .frame(maxWidth: .infinity, minHeight: 48)
-                            .background(Color.neutral300)
+                            .background(viewStore.state.isNextButtonEnabled ? Color.main500 : Color.neutral300)
                             .clipShape(RoundedRectangle(cornerRadius: 4))
                     }
                     .padding(.bottom, 10)
+                    .disabled(!viewStore.state.isNextButtonEnabled)
                 }.padding(.top, 16).padding(.horizontal, 16)
                     .navigationTitle("회원가입")
                     .navigationBarTitleDisplayMode(.inline)
