@@ -20,20 +20,13 @@ struct RegisterView: View {
             NavigationView {
                 VStack(alignment: .leading, spacing: 0) {
                     HStack {
-                        Group {
-                            switch viewStore.state.currentStep {
-                            case .one: Text("1. 약관 동의")
-                            case .two: Text("2. 기본 정보 입력")
-                            case .three: Text("3. 사업자 인증")
-                            }
-                        }
-                        
+                        Text(viewStore.state.currentStep.message)
                         Spacer()
                         Text("\(viewStore.state.currentStep.rawValue) / \(RegisterTab.allCases.count)")
                     }
                      .progressBarTitle()
 
-                    CustomProgressBar(progress: Double(viewStore.state.currentStep.rawValue) / 3.0)
+                    CustomProgressBar(progress: Double(viewStore.state.currentStep.rawValue) / Double(RegisterTab.allCases.count))
                         .frame(height: 8).padding(.top, 8)
                     switch viewStore.state.currentStep {
                     case .one:
