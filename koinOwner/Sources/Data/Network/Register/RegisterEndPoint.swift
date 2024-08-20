@@ -46,8 +46,8 @@ extension RegisterEndPoint: TargetType {
             return .requestJSONEncodable(request)
         case .fetchShops:
             return .requestPlain
-        case let .uploadFile(request):
-            return .requestJSONEncodable(request)
+        case let .uploadFile:
+            return .requestPlain
         case let .tryRegister(request):
             return .requestJSONEncodable(request)
         }

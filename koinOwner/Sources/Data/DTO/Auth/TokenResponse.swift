@@ -8,8 +8,8 @@
 import Foundation
 
 struct TokenResponse: Decodable {
-    let accessToken: String
-    let refreshToken: String
+    let accessToken: String?
+    let refreshToken: String?
     
     enum CodingKeys: String, CodingKey {
         case accessToken = "access_token"
