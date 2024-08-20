@@ -11,7 +11,7 @@ struct OwnerRegisterRequest: Encodable {
     let companyNumber, name, password, phoneNumber: String
     let shopID: Int
     let shopName: String
-    let attachmentUrls: [AttachmentURL]
+    let attachmentUrls: [AttachmentUrl]
 
     enum CodingKeys: String, CodingKey {
         case companyNumber = "company_number"
@@ -20,13 +20,5 @@ struct OwnerRegisterRequest: Encodable {
         case shopID = "shop_id"
         case shopName = "shop_name"
         case attachmentUrls = "attachment_urls"
-    }
-}
-
-struct AttachmentURL: Encodable {
-    let fileUrl: String
-
-    enum CodingKeys: String, CodingKey {
-        case fileUrl = "file_url"
     }
 }
