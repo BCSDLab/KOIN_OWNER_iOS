@@ -18,7 +18,7 @@ enum RegisterEndPoint {
 
 extension RegisterEndPoint: TargetType {
     var baseURL: URL {
-        URL(fileURLWithPath: "")
+        return Bundle.main.baseURL
     }
     
     var path: String {
@@ -33,7 +33,7 @@ extension RegisterEndPoint: TargetType {
     
     var method: Moya.Method {
         switch self {
-        case .sendSms, .checkCode, .uploadFile, .tryRegister : return .post
+        case .sendSms, .checkCode, .uploadFile, .tryRegister: return .post
         case .fetchShops: return .get
         }
     }
@@ -53,7 +53,7 @@ extension RegisterEndPoint: TargetType {
         }
     }
     
-    var headers: [String : String]? {
+    var headers: [String: String]? {
         switch self {
         case .uploadFile: return [:]
         default: return ["Content-Type": "application/json"]

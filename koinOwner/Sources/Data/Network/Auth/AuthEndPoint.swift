@@ -14,7 +14,7 @@ enum AuthEndpoint {
 
 extension AuthEndpoint: TargetType {
     var baseURL: URL {
-        URL(fileURLWithPath: "")
+        return Bundle.main.baseURL
     }
     
     var path: String {

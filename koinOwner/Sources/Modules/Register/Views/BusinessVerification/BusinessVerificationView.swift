@@ -91,6 +91,6 @@ struct BusinessVerificationView: View {
 
 #Preview {
     BusinessVerificationView(store: .init(initialState: .init(), reducer: {
-        BusinessVerificationFeature()._printChanges()
+        BusinessVerificationFeature()
     }))
 }

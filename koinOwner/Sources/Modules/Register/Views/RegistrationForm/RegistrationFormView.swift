@@ -28,8 +28,9 @@ struct RegistrationFormView: View {
                         placeholder: "- 없이 번호를 입력해주세요.",
                         text: viewStore.binding(
                             get: \.phoneNumber,
-                            send: RegistrationFormFeature.Action.checkValidatePhoneNumber
-                        )
+                            send: RegistrationFormFeature.Action.phoneNumberChanged
+                        ),
+                        responseMessage: viewStore.phoneNumberResponseMessage
                     )
                     .padding(.top, 7)
                     
@@ -110,6 +111,6 @@ struct RegistrationFormView: View {
 
 #Preview {
     RegistrationFormView(store: .init(initialState: .init(), reducer: {
-        RegistrationFormFeature()._printChanges()
+        RegistrationFormFeature()
     }))
 }

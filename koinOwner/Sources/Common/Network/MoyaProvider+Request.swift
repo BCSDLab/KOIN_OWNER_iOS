@@ -21,19 +21,19 @@ extension MoyaProvider {
                         let errorResponse = try? JSONDecoder().decode(ErrorResponse.self, from: result.data)
                         continuation.resume(throwing: errorResponse ?? .base)
                     }
-
+                    
                 case .failure(let error):
                     if let response = error.response?.data {
                         let errorResponse = try? JSONDecoder().decode(ErrorResponse.self, from: response)
                         continuation.resume(throwing: errorResponse ?? .base)
                     } else {
-                        continuation.resume(throwing: error)
+                        continuation.resume(throwing: ErrorResponse(code: "", message: error.localizedDescription))
                     }
                 }
             }
         }
     }
-
+    
     @discardableResult
     func requestEmpty(_ target: Target) async throws -> String {
         return try await withCheckedThrowingContinuation { continuation in
@@ -41,30 +41,41 @@ extension MoyaProvider {
                 switch response {
                 case .success(let result):
                     continuation.resume(returning: result.description)
-
+                    
                 case .failure(let error):
                     if let response = error.response?.data {
                         let errorResponse = try? JSONDecoder().decode(ErrorResponse.self, from: response)
                         continuation.resume(throwing: errorResponse ?? .base)
                     } else {
-                        continuation.resume(throwing: error)
+                        continuation.resume(throwing: ErrorResponse(code: "", message: error.localizedDescription))
                     }
                 }
             }
         }
     }
-
+    
     func requestPlain(_ target: Target) async throws {
-        return try await withCheckedThrowingContinuation { continuation in
-            self.request(target) { response in
-                switch response {
-                case .success:
-                    continuation.resume()
+            return try await withCheckedThrowingContinuation { continuation in
+                self.request(target) { response in
+                    switch response {
+                    case .success(let result):
+                        if (200...299).contains(result.statusCode) {
+                            continuation.resume()
+                        } else {
+                            let errorResponse = (try? JSONDecoder().decode(ErrorResponse.self, from: result.data)) ?? .base
+                            continuation.resume(throwing: errorResponse)
+                        }
 
-                case .failure(let error):
-                    continuation.resume(throwing: error)
+                    case .failure(let error):
+                        if let response = error.response?.data {
+                            let errorResponse = (try? JSONDecoder().decode(ErrorResponse.self, from: response)) ?? .base
+                            continuation.resume(throwing: errorResponse)
+                        } else {
+                            continuation.resume(throwing: ErrorResponse(code: "", message: error.localizedDescription))
+                        }
+                    }
                 }
             }
         }
-    }
+
 }

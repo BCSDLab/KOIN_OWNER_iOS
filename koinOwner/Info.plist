@@ -8,5 +8,9 @@
 		<string>Pretendard-Medium.otf</string>
 		<string>Pretendard-Regular.otf</string>
 	</array>
+    <key>DEV_BASE_URL</key>
+    <string>$(DEV_BASE_URL)</string>
+    <key>RELEASE_BASE_URL</key>
+    <string>$(RELEASE_BASE_URL)</string>
 </dict>
 </plist>

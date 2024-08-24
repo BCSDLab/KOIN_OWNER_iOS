@@ -10,7 +10,7 @@ import Dependencies
 import Moya
 
 struct RegisterClient {
-    var sendSms: @Sendable (VerificationSmsRequest) async throws -> String
+    var sendSms: @Sendable (VerificationSmsRequest) async throws -> Void
     var checkCode: @Sendable (VerificationCodeRequest) async throws -> TemporaryTokenResponse
     var fetchShops: @Sendable () async throws -> ShopsDTO
     var uploadFile: @Sendable () async throws -> String
@@ -24,7 +24,7 @@ extension RegisterClient: DependencyKey {
         
         return Self(
             sendSms: {
-                try await nonTokenProvider.request(.sendSms($0))
+                try await nonTokenProvider.requestPlain(.sendSms($0))
             },
             checkCode: {
                 try await nonTokenProvider.request(.checkCode($0))

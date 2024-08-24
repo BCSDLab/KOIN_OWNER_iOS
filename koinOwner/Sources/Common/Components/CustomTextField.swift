@@ -11,11 +11,13 @@ struct CustomTextField: View {
     let placeholder: String
     var isSecure: Bool
     @Binding var text: String
+    var responseMessage: String = ""
 
-    init(placeholder: String, isSecure: Bool = false, text: Binding<String>) {
+    init(placeholder: String, isSecure: Bool = false, text: Binding<String>, responseMessage: String = "") {
         self.placeholder = placeholder
         self.isSecure = isSecure
         self._text = text
+        self.responseMessage = responseMessage
     }
     
     var body: some View {
@@ -32,6 +34,7 @@ struct CustomTextField: View {
             .background(Color(.neutral100))
             .clipShape(RoundedRectangle(cornerRadius: 4))
             .foregroundStyle(Color.neutral800)
+            Text(responseMessage)
        }
     }
 }

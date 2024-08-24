@@ -80,6 +80,6 @@ struct PolicyAgreementView: View {
 
 #Preview {
     PolicyAgreementView(store: .init(initialState: .init(), reducer: {
-        PolicyAgreementFeature()._printChanges()
+        PolicyAgreementFeature()
     }))
 }

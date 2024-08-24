@@ -62,6 +62,6 @@ struct RegisterView: View {
 
 #Preview {
     RegisterView(store: .init(initialState: .init(), reducer: {
-        RegisterFeature()._printChanges()
+        RegisterFeature()
     }))
 }
